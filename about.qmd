@@ -3,38 +3,39 @@ title: "Hakkımda"
 sidebar: false 
 ---
 
-![](assets/images/vesikalik.jpeg){fig-align="center"}
+![](images/IMG_3559.jpg){fig-align="center" width="360"}
 
-# Eğitim
+# Education
 
--   B.S., ................................., ....................................University, Turkey, 20xx - 20xx.
--   M.S., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
--   Ph.D.., Industrial Engineering, Hacettepe University, Turkey, 20xx - ongoing.
+-   B.S., Metallurgical and Material Engineering, Gazi University, 2017 - 2021.
+-   M.S., Engineering Management, Hacettepe University, Turkey, 2026 - ongoing.
 
-# İş Tecrübesi
+# Work Experience
 
 ## Employements
 
-1.  Firm xxx, position xx, year xxx
+1.  Nurol Technologies Inc., Ceramic Production Engineer, 2020 - 2022
 
-2.  Firm yyy, position yyy, year yyy
+2.  Er-Bakır Electrolytic Copper Products Inc., Wire Drawing Production Engineer Specialist, 2022 - 2023
+
+3.  Roketsan, Specialist Production and Test Engineer, 2023 - ongoing.
 
 ## Internships
 
-1.  Firm aaa, position xx, year xxx
-
-2.  Firm bbb, position yyy, year yyy
+1.  Nurol Technologies Inc., Ceramic Production Candidate Engineer, 2020
 
 # Projects
 
-1.  TUBİTAK 1001..........................
-
-# Publications
-
-1.  Dasdemir, E., Batta, R., Koksalan, M., Tezcaner Ozturk, D. (2022) “UAV Routing for Reconnaissance Mission: A Multi-Objective Orienteering Problem with Time-Dependent Prizes and Multiple Connections”, Computers & Operations Research, 145: 105882.
+1.  5% B4C doped direct sinter SiC armor material development and performance investigation.
+2.  Two-step sintering method to prevent grain growth structure
+3.  Manufacturing of SiC armor ceramics tile within liquid phase sintering method
+4.  Improving the subcomponents of Inertial Measurement Units projects (Six Sigma)
+5.  Fiber optic coil improvement project (Six Sigma)
 
 # Competencies
 
-R, Quarto, Git, Python
+R, Quarto, Git, Minitab, Avix, AutoCAD, SAP, Oracle
 
 # Hobbies
+
+Free Diving, Ski, Swimming, Travelling
