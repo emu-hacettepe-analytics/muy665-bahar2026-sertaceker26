@@ -148,8 +148,6 @@ Sarım kalitesi ve sinyal performansı optimizasyonu · Roketsan
 
 ## 🛠 Yetkinlikler
 
-\`\`\`{=html}
-
 ::: {style="margin: 1rem 0;"}
 <strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;"> Programlama & Analitik </strong><br><br> [R]{.skill-tag} [Quarto]{.skill-tag} [Git & GitHub]{.skill-tag} [Minitab]{.skill-tag}
 :::
@@ -159,5 +157,5 @@ Sarım kalitesi ve sinyal performansı optimizasyonu · Roketsan
 :::
 
 ::: {style="margin: 1rem 0;"}
-<strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;"> Metodoloji </strong><br><br> [Six Sigma (DMAIC)]{.skill-tag} [İstatistiksel Proses Kontrol]{.skill-tag} \<span class="
+<strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;"> Metodoloji </strong><br><br> [Six Sigma (DMAIC)]{.skill-tag} [İstatistiksel Proses Kontrol]{.skill-tag}
 :::
