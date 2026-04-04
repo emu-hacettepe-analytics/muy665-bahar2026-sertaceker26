@@ -1,41 +1,195 @@
 ---
 title: "Hakkımda"
-sidebar: false 
+sidebar: false
 ---
 
-![](images/IMG_3559.jpg){fig-align="center" width="360"}
+```{=html}
+<div style="display:flex; align-items:center; gap:2rem; flex-wrap:wrap; margin-bottom:2rem;">
+  <img src="images/IMG_3559.jpg"
+       style="width:150px; height:150px; object-fit:cover; border-radius:50%;
+              border:4px solid #7c3aed; box-shadow:0 4px 20px rgba(124,58,237,.25);" />
+  <div>
+    <h1 style="margin:0; font-size:2rem; font-weight:800; color:#3b0764;">Sertaç Eker</h1>
+    <p style="margin:.4rem 0 .8rem; color:#6b7280; font-size:1rem;">
+      Üretim & Test Mühendisi · İş Analitiği Yüksek Lisans Öğrencisi
+    </p>
+    <span class="hero-badge">📍 Ankara, Türkiye</span>
+    <span class="hero-badge">🏭 Roketsan</span>
+    <span class="hero-badge">🎓 Hacettepe Üniversitesi</span>
+  </div>
+</div>
+```
 
-# Education
+> Metalürji mühendisliği temeli üzerine inşa edilen bir veri yolculuğu — savunma sanayiinden iş analitiğine.
 
--   B.S., Metallurgical and Material Engineering, Gazi University, 2017 - 2021.
--   M.S., Engineering Management, Hacettepe University, Turkey, 2026 - ongoing.
+------------------------------------------------------------------------
 
-# Work Experience
+## 🎓 Eğitim
 
-## Employements
+::::: info-card
+::: info-card-title
+Hacettepe Üniversitesi — Mühendislik Yönetimi (Yüksek Lisans)
+:::
 
-1.  Nurol Technologies Inc., Ceramic Production Engineer, 2020 - 2022
+::: info-card-sub
+2025 – Devam ediyor · Ankara · MÜY665 İş Analitiği
+:::
+:::::
 
-2.  Er-Bakır Electrolytic Copper Products Inc., Wire Drawing Production Engineer Specialist, 2022 - 2023
+::::: info-card
+::: info-card-title
+Gazi Üniversitesi — Metalürji ve Malzeme Mühendisliği (Lisans)
+:::
 
-3.  Roketsan, Specialist Production and Test Engineer, 2023 - ongoing.
+::: info-card-sub
+2017 – 2021 · Ankara
+:::
+:::::
 
-## Internships
+------------------------------------------------------------------------
 
-1.  Nurol Technologies Inc., Ceramic Production Candidate Engineer, 2020
+## 💼 İş Deneyimi
 
-# Projects
+::::: info-card
+::: info-card-title
+Roketsan — Uzman Üretim ve Test Mühendisi
+:::
 
-1.  5% B4C doped direct sinter SiC armor material development and performance investigation.
-2.  Two-step sintering method to prevent grain growth structure
-3.  Manufacturing of SiC armor ceramics tile within liquid phase sintering method
-4.  Improving the subcomponents of Inertial Measurement Units projects (Six Sigma)
-5.  Fiber optic coil improvement project (Six Sigma)
+::: info-card-sub
+2023 – Devam ediyor · İnertial Measurement Unit alt bileşen geliştirme, fiber optik bobin iyileştirme (Six Sigma)
+:::
+:::::
 
-# Competencies
+::::: info-card
+::: info-card-title
+Er-Bakır Elektrolitik Bakır Ürünleri A.Ş. — Tel Çekme Uzman Mühendisi
+:::
 
-R, Quarto, Git, Minitab, Avix, AutoCAD, SAP, Oracle
+::: info-card-sub
+2022 – 2023 · Üretim süreç optimizasyonu ve kalite yönetimi
+:::
+:::::
 
-# Hobbies
+::::: info-card
+::: info-card-title
+Nurol Teknoloji A.Ş. — Seramik Üretim Mühendisi
+:::
 
-Free Diving, Ski, Swimming, Travelling
+::: info-card-sub
+2020 – 2022 · Zırh seramik üretimi ve malzeme geliştirme
+:::
+:::::
+
+::::: info-card
+::: info-card-title
+Nurol Teknoloji A.Ş. — Stajyer Aday Mühendis
+:::
+
+::: info-card-sub
+2020 · Üretim süreçlerine giriş stajı
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 🔬 Projeler
+
+::::: info-card
+::: info-card-title
+%5 B₄C Katkılı Doğrudan Sinterleme SiC Zırh Malzemesi Geliştirme
+:::
+
+::: info-card-sub
+Balistik performans araştırması ve malzeme karakterizasyonu
+:::
+:::::
+
+::::: info-card
+::: info-card-title
+İki Aşamalı Sinterleme ile Tane Büyümesi Önleme
+:::
+
+::: info-card-sub
+Mikroyapı kontrolü ve mekanik özellik iyileştirme
+:::
+:::::
+
+::::: info-card
+::: info-card-title
+Sıvı Faz Sinterleme ile SiC Zırh Seramik Karo Üretimi
+:::
+
+::: info-card-sub
+Alternatif sinterleme yöntemi araştırması
+:::
+:::::
+
+::::: info-card
+::: info-card-title
+IMU Alt Bileşen İyileştirme Projesi (Six Sigma)
+:::
+
+::: info-card-sub
+DMAIC metodolojisi ile süreç yeterliliği artırma · Roketsan
+:::
+:::::
+
+::::: info-card
+::: info-card-title
+Fiber Optik Bobin İyileştirme Projesi (Six Sigma)
+:::
+
+::: info-card-sub
+Sarım kalitesi ve sinyal performansı optimizasyonu · Roketsan
+:::
+:::::
+
+------------------------------------------------------------------------
+
+## 🛠 Yetkinlikler
+
+```{=html}
+<div style="margin: 1rem 0;">
+  <strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;">
+    Programlama & Analitik
+  </strong><br><br>
+  <span class="skill-tag">R</span>
+  <span class="skill-tag">Quarto</span>
+  <span class="skill-tag">Git & GitHub</span>
+  <span class="skill-tag">Minitab</span>
+</div>
+<div style="margin: 1rem 0;">
+  <strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;">
+    Mühendislik Araçları
+  </strong><br><br>
+  <span class="skill-tag">AutoCAD</span>
+  <span class="skill-tag">SAP</span>
+  <span class="skill-tag">Oracle</span>
+  <span class="skill-tag">Avix</span>
+</div>
+<div style="margin: 1rem 0;">
+  <strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;">
+    Metodoloji
+  </strong><br><br>
+  <span class="skill-tag">Six Sigma (DMAIC)</span>
+  <span class="skill-tag">İstatistiksel Proses Kontrol</span>
+  <span class="skill-tag">Veri Görselleştirme</span>
+</div>
+```
+
+------------------------------------------------------------------------
+
+## 🏄 Hobiler
+
+```{=html}
+<div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.5rem;">
+  <span class="hero-badge">🤿 Serbest Dalış</span>
+  <span class="hero-badge">⛷️ Kayak</span>
+  <span class="hero-badge">🏊 Yüzme</span>
+  <span class="hero-badge">✈️ Seyahat</span>
+</div>
+```
+
+------------------------------------------------------------------------
+
+📄 [**CV İndir (PDF)**](cv.pdf)
