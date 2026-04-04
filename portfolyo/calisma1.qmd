@@ -1,16 +1,212 @@
 ---
 title: "Çalışma 1"
+author: "Sertaç Eker"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-summary: "Kodu Göster"
+    theme: cosmo
 ---
 
-\
-(Aşağıdakiler örnek olarak verilmiştir.)
-
-Bu çalışmada 3 görevimiz var. Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
-
-## (a)
-
-```{r}
-1 + 1
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 ```
 
-## (b)
+# Görev 3 – Video Özeti ve Sorular
+
+## Seçilen Video
+
+**Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler – Kerem Demirtaş & Erdi Dasdemir**
+
+## Video Özeti
+
+Bu sohbette Erdi Dasdemir, iş analitiği ve veri bilimi alanında önde gelen isimlerden biri olan Kerem Demirtaş ile endüstri mühendisliği perspektifinden veri biliminin rolünü ele almıştır. Konuşmada öne çıkan başlıca temalar şunlardır:
+
+-   **Veri bilimi ve endüstri mühendisliğinin kesişimi:** Endüstri mühendisliğinin analitik alt yapısı, veri bilimcilere büyük bir avantaj sağlamaktadır. İstatistik, optimizasyon ve sistem düşüncesi gibi temel beceriler, veri projelerinde doğrudan uygulanabilmektedir.
+-   **Gerçek dünya projeleri:** Kerem Demirtaş, sektördeki veri odaklı karar alma süreçlerinden örnekler paylaşmıştır. Özellikle tahmine dayalı modelleme ve süreç optimizasyonu konusunda endüstri mühendislerinin getirdiği katma değere dikkat çekmiştir.
+-   **Kariyer tavsiyesi:** Hem akademik hem de sektör deneyimine sahip bir bakış açısıyla, veri bilimi kariyerine geçiş yapmak isteyenlere pratik öneriler sunulmuştur: teknik beceriler kadar problem tanımlama ve iş anlayışı da kritik öneme sahiptir.
+-   **Yapay zekanın geleceği:** Büyük dil modelleri ve otomasyon araçlarının endüstri mühendisliği uygulamalarını nasıl dönüştüreceğine dair öngörüler paylaşılmıştır.
+
+Genel olarak video, teknik yetkinliğin yanı sıra alan bilgisi ve iş zekasının veri biliminde başarının anahtarı olduğunu vurgulamaktadır.
+
+------------------------------------------------------------------------
+
+## Görev 3b – Sorular
+
+### Açık Uçlu Soru
+
+**Soru:** Videoda endüstri mühendisliği eğitiminin veri bilimcilere sağladığı en önemli avantajın "sistem düşüncesi" olduğu vurgulanmaktadır. Sizce bu avantaj, makine öğrenmesi projelerinin hangi aşamasında en belirleyici etkiyi göstermektedir ve neden?
+
+**Cevap:** Sistem düşüncesi en çok **problem tanımlama ve veri toplama** aşamasında belirleyicidir. Bir sistemi uçtan uca anlayan mühendis, hangi değişkenlerin modele dahil edilmesi gerektiğini, hangi gürültünün filtrelenmesi gerektiğini ve modelin çıktısının operasyonel sürece nasıl entegre edileceğini daha başından doğru biçimde çerçeveleyebilir. Bu da sonraki aşamalardaki yeniden çalışma maliyetini önemli ölçüde azaltır.
+
+------------------------------------------------------------------------
+
+### Çoktan Seçmeli Soru
+
+**Soru:** Videoya göre, veri bilimi projelerinde sıklıkla karşılaşılan başarısızlık nedenlerinden biri aşağıdakilerden hangisidir?
+
+-   
+
+    A)  Yeterli miktarda verinin bulunmaması
+
+-   
+
+    B)  Problemin iş bağlamından kopuk biçimde tanımlanması ✅
+
+-   
+
+    C)  Güçlü algoritmaların yokluğu
+
+-   
+
+    D)  Bulut altyapısının yetersizliği
+
+**Doğru Cevap: B** **Açıklama:** Videoda vurgulandığı üzere, veri bilimcilerin en sık düştüğü tuzak teknik eksiklik değil, iş problemini yanlış ya da eksik tanımlamaktır. İş bağlamını anlamadan kurulan model, ne kadar istatistiksel olarak başarılı olursa olsun organizasyona değer katmaz.
+
+------------------------------------------------------------------------
+
+# Görev 4 – R Kodu ve Veri Analizi
+
+## 4.1 – Kişisel Değişkenler ve k Hesabı
+
+```{r personal-vars}
+# Kişisel değişkenler
+my_first     <- "SERTAÇ"
+my_birth_year <- 1998
+
+# k hesabı: 8 ile 22 arasında garantili
+k <- (nchar(my_first) + my_birth_year) %% 15 + 8
+
+cat("my_first      :", my_first, "\n")
+cat("my_birth_year :", my_birth_year, "\n")
+cat("nchar(my_first):", nchar(my_first), "\n")
+cat("k             :", k, "\n")
+cat("k is          :", ifelse(k %% 2 == 0, "ÇİFT → head(data, k)", "TEK → tail(data, k)"), "\n")
+```
+
+## 4.2 – Veri Setini Yükle
+
+```{r load-data}
+# dslabs paketini yükle
+if (!requireNamespace("dslabs", quietly = TRUE)) {
+  install.packages("dslabs")
+}
+library(dslabs)
+
+# Veri setini yükle
+data("polls_us_election_2016")
+
+# Boyut bilgisi
+cat("Veri seti boyutu:", nrow(polls_us_election_2016), "satır x",
+    ncol(polls_us_election_2016), "sütun\n")
+```
+
+## 4.3 – Orijinal Veriden k Satır Görüntüle
+
+k = `r k` **tek** sayı olduğu için son `r k` satır (`tail`) görüntülenir.
+
+```{r show-original-k-rows}
+# k = 17 (tek) → son 17 satır
+original_k_rows <- tail(polls_us_election_2016, k)
+
+knitr::kable(
+  original_k_rows,
+  caption = paste0("Orijinal veri setinin son ", k, " satırı")
+)
+```
+
+## 4.4 – NA Değerlerinin Analizi
+
+```{r na-analysis}
+# Toplam NA sayısı
+total_na <- sum(is.na(polls_us_election_2016))
+cat("Toplam NA değer sayısı:", total_na, "\n\n")
+
+# Sütun başına NA sayısı (büyükten küçüğe sıralı, ilk 8 sütun)
+na_per_col <- sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)
+
+cat("Sütun başına NA sayısı (ilk 8 sütun):\n")
+print(head(na_per_col, 8))
+
+# Tablo olarak göster
+knitr::kable(
+  data.frame(
+    Sutun    = names(head(na_per_col, 8)),
+    NA_Sayisi = as.integer(head(na_per_col, 8))
+  ),
+  caption = "Sütun Başına NA Sayısı (Büyükten Küçüğe, İlk 8)"
+)
+```
+
+## 4.5 – NA Değerlerini Değiştir (Yeni Veri Çerçevesi)
+
+```{r replace-na}
+# Yeni veri çerçevesini orijinalden kopyala (orijinali değiştirme)
+new_data <- polls_us_election_2016
+
+# Sayısal sütunlar: NA → my_birth_year + k
+numeric_replacement <- my_birth_year + k
+cat("Sayısal NA yerine konacak değer:", numeric_replacement, "\n")
+
+# Karakter/faktör sütunlar: NA → paste0(my_first, "_", k)
+char_replacement <- paste0(my_first, "_", k)
+cat("Karakter/Faktör NA yerine konacak değer:", char_replacement, "\n\n")
+
+# Sütun tiplerini belirle ve değiştir
+for (col in names(new_data)) {
+  if (is.numeric(new_data[[col]])) {
+    new_data[[col]][is.na(new_data[[col]])] <- numeric_replacement
+  } else if (is.character(new_data[[col]]) || is.factor(new_data[[col]])) {
+    if (is.factor(new_data[[col]])) {
+      # Faktör sütunlara yeni seviye ekle
+      levels(new_data[[col]]) <- c(levels(new_data[[col]]), char_replacement)
+    }
+    new_data[[col]][is.na(new_data[[col]])] <- char_replacement
+  }
+}
+
+cat("NA değerleri başarıyla değiştirildi.\n")
+```
+
+## 4.6 – Yeni Veri Çerçevesi Çıktıları
+
+### 4.6.1 – Yeni Veri Çerçevesinin k Satırı
+
+k = `r k` **tek** olduğu için son `r k` satır görüntülenir.
+
+```{r show-new-k-rows}
+new_k_rows <- tail(new_data, k)
+
+knitr::kable(
+  new_k_rows,
+  caption = paste0("Yeni veri çerçevesinin son ", k, " satırı")
+)
+```
+
+### 4.6.2 – Kalan NA Sayısı
+
+```{r remaining-na}
+remaining_na <- sum(is.na(new_data))
+cat("Yeni veri çerçevesindeki kalan NA sayısı:", remaining_na, "\n")
+```
+
+### 4.6.3 – anyNA Kontrolü
+
+```{r anyna-check}
+# Doğru değiştirme yapıldıysa FALSE döndürmeli
+result <- anyNA(new_data)
+cat("anyNA(new_data) =", result, "\n")
+
+if (!result) {
+  cat("✓ Tüm NA değerleri başarıyla değiştirildi!\n")
+} else {
+  cat("✗ Hâlâ NA değerleri bulunuyor, kontrol edin.\n")
+}
+```
+
+------------------------------------------------------------------------
+
+*Bu çalışmada R kodu üretilmesinde yapay zeka (Claude) desteğinden yararlanılmıştır. Kodun mantığı ve çıktıları tarafımdan incelenip doğrulanmıştır.*
