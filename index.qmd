@@ -1,8 +1,72 @@
 ---
-title: "Analitik sayfama hoş geldiniz"
-sidebar: false 
+title: " "
+sidebar: false
 ---
 
-MUY660-İş Analitiği dersi sayfama hoş geldiniz.
+```{=html}
+<div class="hero-section">
+  <p class="hero-title">Merhaba, ben Sertaç 👋</p>
+  <p class="hero-subtitle">Üretim Mühendisi · İş Analitiği Yüksek Lisans Öğrencisi · Veri Tutkunu</p>
+  <span class="hero-badge">🎓 Hacettepe Üniversitesi</span>
+  <span class="hero-badge">🏭 Roketsan</span>
+  <span class="hero-badge">📊 MÜY665 İş Analitiği</span>
+  <span class="hero-badge">🔬 Six Sigma</span>
+</div>
+```
 
-Bu analitik çalışmalarımızı paylaşıyorum.
+Bu sitede **MÜY665 İş Analitiği** dersi kapsamında yaptığım analitik çalışmalarımı, veri projelerimi ve ödevlerimi paylaşıyorum. Metalürji mühendisliği geçmişimi veri bilimi ile birleştirerek üretim ve savunma sanayiinde anlamlı içgörüler üretmeyi hedefliyorum.
+
+------------------------------------------------------------------------
+
+```{=html}
+<div class="stat-grid">
+  <div class="stat-card">
+    <span class="stat-number">4+</span>
+    <span class="stat-label">Yıl Deneyim</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number">5+</span>
+    <span class="stat-label">Proje</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number">2</span>
+    <span class="stat-label">Six Sigma</span>
+  </div>
+  <div class="stat-card">
+    <span class="stat-number">R</span>
+    <span class="stat-label">& Quarto</span>
+  </div>
+</div>
+```
+
+## Neler Bulabilirsiniz?
+
+::::: info-card
+::: info-card-title
+📚 Ödev Çalışmaları
+:::
+
+::: info-card-sub
+MÜY665 İş Analitiği dersi kapsamında R ile yapılan veri analizi ödevleri — `polls_us_election_2016` veri setinden başlayarak ilerleyen analitik çalışmalar.
+:::
+:::::
+
+::::: info-card
+::: info-card-title
+🔍 Veri Analizleri
+:::
+
+::: info-card-sub
+Gerçek veri setleri üzerinde keşifsel analiz, görselleştirme ve istatistiksel modelleme çalışmaları. Her analiz tekrarlanabilir kod ile belgelenmiştir.
+:::
+:::::
+
+::::: info-card
+::: info-card-title
+🧪 Proje Çalışmaları
+:::
+
+::: info-card-sub
+Üretim süreçleri ve mühendislik problemlerine veri odaklı yaklaşımlar. Six Sigma metodolojisi ile veri biliminin kesişimi.
+:::
+:::::
