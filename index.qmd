@@ -68,3 +68,5 @@ Gerçek veri setleri üzerinde keşifsel analiz, görselleştirme ve istatistiks
 
 ::: info-card-sub
 Üretim süreç
+:::
+:::::
