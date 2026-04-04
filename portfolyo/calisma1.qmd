@@ -196,3 +196,17 @@ cat("Yeni veri çerçevesindeki kalan NA sayısı:", remaining_na, "\n")
 ### 4.6.3 – anyNA Kontrolü
 
 ```{r anyna-check}
+# Doğru değiştirme yapıldıysa FALSE döndürmeli
+result <- anyNA(new_data)
+cat("anyNA(new_data) =", result, "\n")
+
+if (!result) {
+  cat("✓ Tüm NA değerleri başarıyla değiştirildi!\n")
+} else {
+  cat("✗ Hâlâ NA değerleri bulunuyor, kontrol edin.\n")
+}
+```
+
+------------------------------------------------------------------------
+
+*Bu çalışmada R kodu üretilmesinde yapay zeka (Claude) desteğinden yararlanılmıştır. Kodun mantığı ve çıktıları tarafımdan incelenip doğrulanmıştır.*

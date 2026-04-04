@@ -1,331 +1,10 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Analitik sayfama hoş geldiniz",
-    "section": "",
-    "text": "MUY660-İş Analitiği dersi sayfama hoş geldiniz.\nBu analitik çalışmalarımızı paylaşıyorum.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "teammembers/volkansonmez.html",
-    "href": "teammembers/volkansonmez.html",
-    "title": "Assignment 2",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "team.html",
-    "href": "team.html",
-    "title": "Takım Üyeleri",
-    "section": "",
-    "text": "Use left menu to see the detailed CVs of our Team Members.\n\nTeam Members\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Team Members",
-      "Takım Üyeleri"
-    ]
-  },
-  {
-    "objectID": "assignments/assignment-2.html",
-    "href": "assignments/assignment-2.html",
-    "title": "Assignment 2",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "analysis.html",
-    "href": "analysis.html",
-    "title": "Analysis",
-    "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "assignments/assignment-1.html",
-    "href": "assignments/assignment-1.html",
-    "title": "Assignment 1",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts.",
-    "crumbs": [
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "data.html",
-    "href": "data.html",
-    "title": "Data",
-    "section": "",
-    "text": "Data source: xxx\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "teammembers/erdidasdemir.html",
-    "href": "teammembers/erdidasdemir.html",
-    "title": "Assignment 1",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts."
-  },
-  {
-    "objectID": "team/volkansonmez.html",
-    "href": "team/volkansonmez.html",
-    "title": "Assignment 2",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Project Team",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "team/erdidasdemir.html",
-    "href": "team/erdidasdemir.html",
-    "title": "Erdi Dasdemir",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts.",
-    "crumbs": [
-      "Team Members",
-      "Erdi Dasdemir"
-    ]
-  },
-  {
-    "objectID": "assignments.html",
-    "href": "assignments.html",
-    "title": "My Assignments",
-    "section": "",
-    "text": "On this page, I showcase the assignment I conducted for the [term and year, e.g. Spring 2024] EMU660 Decision Making with Analytics course.\nPlease use left menu to navigate through my assignments.\n\n\n\n Back to top",
-    "crumbs": [
-      "Assignments",
-      "My Assignments"
-    ]
-  },
-  {
-    "objectID": "project.html",
-    "href": "project.html",
-    "title": "Project X",
-    "section": "",
-    "text": "Welcome to my project page.\nKeep an eye on this space to stay updated with my project activities.\n(The titles below are provided as examples; please feel free to adjust them as necessary.)"
-  },
-  {
-    "objectID": "project.html#data-source",
-    "href": "project.html#data-source",
-    "title": "Project X",
-    "section": "2.1 Data Source",
-    "text": "2.1 Data Source\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#general-information-about-data",
-    "href": "project.html#general-information-about-data",
-    "title": "Project X",
-    "section": "2.2 General Information About Data",
-    "text": "2.2 General Information About Data\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#reason-of-choice",
-    "href": "project.html#reason-of-choice",
-    "title": "Project X",
-    "section": "2.3 Reason of Choice",
-    "text": "2.3 Reason of Choice\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#preprocessing",
-    "href": "project.html#preprocessing",
-    "title": "Project X",
-    "section": "2.4 Preprocessing",
-    "text": "2.4 Preprocessing\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#exploratory-data-analysis",
-    "href": "project.html#exploratory-data-analysis",
-    "title": "Project X",
-    "section": "3.1 Exploratory Data Analysis",
-    "text": "3.1 Exploratory Data Analysis\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#trend-analysis",
-    "href": "project.html#trend-analysis",
-    "title": "Project X",
-    "section": "3.2 Trend Analysis",
-    "text": "3.2 Trend Analysis\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#model-fitting",
-    "href": "project.html#model-fitting",
-    "title": "Project X",
-    "section": "3.3 Model Fitting",
-    "text": "3.3 Model Fitting\nxxxxxx"
-  },
-  {
-    "objectID": "project.html#results",
-    "href": "project.html#results",
-    "title": "Project X",
-    "section": "3.4 Results",
-    "text": "3.4 Results\nxxxxxx"
-  },
-  {
-    "objectID": "team/szymanski.html",
-    "href": "team/szymanski.html",
-    "title": "Sebastian Szymański",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "team/edindzeko.html",
-    "href": "team/edindzeko.html",
-    "title": "Edin_Džeko",
-    "section": "",
-    "text": "1 + 1\n\n[1] 2\n\n\nMy first assignment has two parts."
-  },
-  {
-    "objectID": "team/dusantadic.html",
-    "href": "team/dusantadic.html",
-    "title": "Dusan Tadic",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "team/fred.html",
-    "href": "team/fred.html",
-    "title": "Frederico Rodrigues",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "index.html#proje-adı",
-    "href": "index.html#proje-adı",
-    "title": "Takım: XXX",
-    "section": "Proje Adı",
-    "text": "Proje Adı\nMUY660-İş Analitiği iyileştirme çalışmaları (örnek)"
-  },
-  {
-    "objectID": "index.html#proje-konusu",
-    "href": "index.html#proje-konusu",
-    "title": "Takım: XXX",
-    "section": "Proje Konusu",
-    "text": "Proje Konusu\nÖrnek: Bu projede MUY660-İş Analitiği ders içeriğinin analitik yaklaşımlarla iyileştirilmesini hedefledik. Bu doğrultuda tüm üniversitelerdeki benzer derslerin verisini toplayarak bir veri seti oluşturduk Analiz için …….. yöntemleri kullanarak, ……. çalışmaları yaptık Sonuç olarak, MUY660-İş Analitiği dersinin dünyadaki tüm derslerden daha iyi olduğunu ve bu dersi aldığımız için çok mutlu olduğumuzu tespit ettik."
-  },
-  {
-    "objectID": "index.html#veri-seti-hakkında-özet-bilgi",
-    "href": "index.html#veri-seti-hakkında-özet-bilgi",
-    "title": "Takım: XXX",
-    "section": "Veri Seti Hakkında Özet Bilgi",
-    "text": "Veri Seti Hakkında Özet Bilgi"
-  },
-  {
-    "objectID": "index.html#sonuçlar",
-    "href": "index.html#sonuçlar",
-    "title": "Takım: XXX",
-    "section": "Sonuçlar",
-    "text": "Sonuçlar\nBurada key takeways verilmelidir. En az 3 en fazla 5 madde ile çarpıcı sonuçlar sunulmalıdır."
-  },
-  {
-    "objectID": "index.html#takım-üyeleri",
-    "href": "index.html#takım-üyeleri",
-    "title": "Takım: XXX",
-    "section": "Takım Üyeleri",
-    "text": "Takım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański"
-  },
-  {
-    "objectID": "portfolyo.html",
-    "href": "portfolyo.html",
-    "title": "Portfolyo",
-    "section": "",
-    "text": "Bu sayfada, MUY665 İş Analitiği dersi 2025-2026 bahar dönemi boyunca yaptığım analitik çalışmalarımı sunmaktayım. Çalışmalarıma sol menüden ulaşabilirsiniz.\n\n\n\n Back to top",
-    "crumbs": [
-      "Portfolyo"
-    ]
-  },
-  {
-    "objectID": "takim.html",
-    "href": "takim.html",
-    "title": "Takım Üyeleri",
-    "section": "",
-    "text": "Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfalarına gitmek için sol menüyü veya aşağıdaki linkleri kullanabilirsiniz.\n\nTakım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Takım Üyeleri"
-    ]
-  },
-  {
     "objectID": "proje.html",
     "href": "proje.html",
     "title": "Proje X (proje adını yazınız)",
     "section": "",
-    "text": "Proje sayfamıza hoş geldiniz.\nProjemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin.\n(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)"
-  },
-  {
-    "objectID": "proje.html#data-source",
-    "href": "proje.html#data-source",
-    "title": "Proje X",
-    "section": "2.1 Data Source",
-    "text": "2.1 Data Source\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#general-information-about-data",
-    "href": "proje.html#general-information-about-data",
-    "title": "Proje X",
-    "section": "2.2 General Information About Data",
-    "text": "2.2 General Information About Data\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#reason-of-choice",
-    "href": "proje.html#reason-of-choice",
-    "title": "Proje X",
-    "section": "2.3 Reason of Choice",
-    "text": "2.3 Reason of Choice\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#preprocessing",
-    "href": "proje.html#preprocessing",
-    "title": "Proje X",
-    "section": "2.4 Preprocessing",
-    "text": "2.4 Preprocessing\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#exploratory-data-analysis",
-    "href": "proje.html#exploratory-data-analysis",
-    "title": "Proje X",
-    "section": "3.1 Exploratory Data Analysis",
-    "text": "3.1 Exploratory Data Analysis\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#trend-analysis",
-    "href": "proje.html#trend-analysis",
-    "title": "Proje X",
-    "section": "3.2 Trend Analysis",
-    "text": "3.2 Trend Analysis\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#model-fitting",
-    "href": "proje.html#model-fitting",
-    "title": "Proje X",
-    "section": "3.3 Model Fitting",
-    "text": "3.3 Model Fitting\nxxxxxx"
-  },
-  {
-    "objectID": "proje.html#results",
-    "href": "proje.html#results",
-    "title": "Proje X",
-    "section": "3.4 Results",
-    "text": "3.4 Results\nxxxxxx"
-  },
-  {
-    "objectID": "portfolyo/calisma2.html",
-    "href": "portfolyo/calisma2.html",
-    "title": "Çalışma 2",
-    "section": "",
-    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz.",
-    "crumbs": [
-      "Çalışma 2"
-    ]
-  },
-  {
-    "objectID": "portfolyo/calisma1.html",
-    "href": "portfolyo/calisma1.html",
-    "title": "Çalışma 1",
-    "section": "",
-    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz.",
-    "crumbs": [
-      "Çalışma 1"
-    ]
+    "text": "Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.\n(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)"
   },
   {
     "objectID": "proje.html#veri-kaynağı",
@@ -384,13 +63,172 @@
     "text": "3.4 Sonuçlar\nxxxxxx"
   },
   {
-    "objectID": "portfolyo/calisma1.html#a",
-    "href": "portfolyo/calisma1.html#a",
+    "objectID": "portfolyo.html",
+    "href": "portfolyo.html",
+    "title": "Portfolyo",
+    "section": "",
+    "text": "Bu sayfada, MUY665 İş Analitiği dersi 2025-2026 bahar dönemi boyunca yaptığım analitik çalışmalarımı sunmaktayım. Çalışmalarıma sol menüden ulaşabilirsiniz.\n\n\n\n Back to top",
+    "crumbs": [
+      "Portfolyo"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html",
+    "href": "portfolyo/calisma1.html",
     "title": "Çalışma 1",
-    "section": "(a)",
-    "text": "(a)\n\n1 + 1\n\n[1] 2",
+    "section": "",
+    "text": "Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler – Kerem Demirtaş & Erdi Dasdemir\n\n\n\nBu sohbette Erdi Dasdemir, iş analitiği ve veri bilimi alanında önde gelen isimlerden biri olan Kerem Demirtaş ile endüstri mühendisliği perspektifinden veri biliminin rolünü ele almıştır. Konuşmada öne çıkan başlıca temalar şunlardır:\n\nVeri bilimi ve endüstri mühendisliğinin kesişimi: Endüstri mühendisliğinin analitik alt yapısı, veri bilimcilere büyük bir avantaj sağlamaktadır. İstatistik, optimizasyon ve sistem düşüncesi gibi temel beceriler, veri projelerinde doğrudan uygulanabilmektedir.\nGerçek dünya projeleri: Kerem Demirtaş, sektördeki veri odaklı karar alma süreçlerinden örnekler paylaşmıştır. Özellikle tahmine dayalı modelleme ve süreç optimizasyonu konusunda endüstri mühendislerinin getirdiği katma değere dikkat çekmiştir.\nKariyer tavsiyesi: Hem akademik hem de sektör deneyimine sahip bir bakış açısıyla, veri bilimi kariyerine geçiş yapmak isteyenlere pratik öneriler sunulmuştur: teknik beceriler kadar problem tanımlama ve iş anlayışı da kritik öneme sahiptir.\nYapay zekanın geleceği: Büyük dil modelleri ve otomasyon araçlarının endüstri mühendisliği uygulamalarını nasıl dönüştüreceğine dair öngörüler paylaşılmıştır.\n\nGenel olarak video, teknik yetkinliğin yanı sıra alan bilgisi ve iş zekasının veri biliminde başarının anahtarı olduğunu vurgulamaktadır.\n\n\n\n\n\n\nSoru: Videoda endüstri mühendisliği eğitiminin veri bilimcilere sağladığı en önemli avantajın “sistem düşüncesi” olduğu vurgulanmaktadır. Sizce bu avantaj, makine öğrenmesi projelerinin hangi aşamasında en belirleyici etkiyi göstermektedir ve neden?\nCevap: Sistem düşüncesi en çok problem tanımlama ve veri toplama aşamasında belirleyicidir. Bir sistemi uçtan uca anlayan mühendis, hangi değişkenlerin modele dahil edilmesi gerektiğini, hangi gürültünün filtrelenmesi gerektiğini ve modelin çıktısının operasyonel sürece nasıl entegre edileceğini daha başından doğru biçimde çerçeveleyebilir. Bu da sonraki aşamalardaki yeniden çalışma maliyetini önemli ölçüde azaltır.\n\n\n\n\nSoru: Videoya göre, veri bilimi projelerinde sıklıkla karşılaşılan başarısızlık nedenlerinden biri aşağıdakilerden hangisidir?\n\n\nYeterli miktarda verinin bulunmaması\n\n\nProblemin iş bağlamından kopuk biçimde tanımlanması ✅\n\n\nGüçlü algoritmaların yokluğu\n\n\nBulut altyapısının yetersizliği\n\n\nDoğru Cevap: B Açıklama: Videoda vurgulandığı üzere, veri bilimcilerin en sık düştüğü tuzak teknik eksiklik değil, iş problemini yanlış ya da eksik tanımlamaktır. İş bağlamını anlamadan kurulan model, ne kadar istatistiksel olarak başarılı olursa olsun organizasyona değer katmaz.",
     "crumbs": [
       "Çalışma 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#seçilen-video",
+    "href": "portfolyo/calisma1.html#seçilen-video",
+    "title": "Çalışma 1",
+    "section": "",
+    "text": "Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler – Kerem Demirtaş & Erdi Dasdemir",
+    "crumbs": [
+      "Çalışma 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#video-özeti",
+    "href": "portfolyo/calisma1.html#video-özeti",
+    "title": "Çalışma 1",
+    "section": "",
+    "text": "Bu sohbette Erdi Dasdemir, iş analitiği ve veri bilimi alanında önde gelen isimlerden biri olan Kerem Demirtaş ile endüstri mühendisliği perspektifinden veri biliminin rolünü ele almıştır. Konuşmada öne çıkan başlıca temalar şunlardır:\n\nVeri bilimi ve endüstri mühendisliğinin kesişimi: Endüstri mühendisliğinin analitik alt yapısı, veri bilimcilere büyük bir avantaj sağlamaktadır. İstatistik, optimizasyon ve sistem düşüncesi gibi temel beceriler, veri projelerinde doğrudan uygulanabilmektedir.\nGerçek dünya projeleri: Kerem Demirtaş, sektördeki veri odaklı karar alma süreçlerinden örnekler paylaşmıştır. Özellikle tahmine dayalı modelleme ve süreç optimizasyonu konusunda endüstri mühendislerinin getirdiği katma değere dikkat çekmiştir.\nKariyer tavsiyesi: Hem akademik hem de sektör deneyimine sahip bir bakış açısıyla, veri bilimi kariyerine geçiş yapmak isteyenlere pratik öneriler sunulmuştur: teknik beceriler kadar problem tanımlama ve iş anlayışı da kritik öneme sahiptir.\nYapay zekanın geleceği: Büyük dil modelleri ve otomasyon araçlarının endüstri mühendisliği uygulamalarını nasıl dönüştüreceğine dair öngörüler paylaşılmıştır.\n\nGenel olarak video, teknik yetkinliğin yanı sıra alan bilgisi ve iş zekasının veri biliminde başarının anahtarı olduğunu vurgulamaktadır.",
+    "crumbs": [
+      "Çalışma 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#görev-3b-sorular",
+    "href": "portfolyo/calisma1.html#görev-3b-sorular",
+    "title": "Çalışma 1",
+    "section": "",
+    "text": "Soru: Videoda endüstri mühendisliği eğitiminin veri bilimcilere sağladığı en önemli avantajın “sistem düşüncesi” olduğu vurgulanmaktadır. Sizce bu avantaj, makine öğrenmesi projelerinin hangi aşamasında en belirleyici etkiyi göstermektedir ve neden?\nCevap: Sistem düşüncesi en çok problem tanımlama ve veri toplama aşamasında belirleyicidir. Bir sistemi uçtan uca anlayan mühendis, hangi değişkenlerin modele dahil edilmesi gerektiğini, hangi gürültünün filtrelenmesi gerektiğini ve modelin çıktısının operasyonel sürece nasıl entegre edileceğini daha başından doğru biçimde çerçeveleyebilir. Bu da sonraki aşamalardaki yeniden çalışma maliyetini önemli ölçüde azaltır.\n\n\n\n\nSoru: Videoya göre, veri bilimi projelerinde sıklıkla karşılaşılan başarısızlık nedenlerinden biri aşağıdakilerden hangisidir?\n\n\nYeterli miktarda verinin bulunmaması\n\n\nProblemin iş bağlamından kopuk biçimde tanımlanması ✅\n\n\nGüçlü algoritmaların yokluğu\n\n\nBulut altyapısının yetersizliği\n\n\nDoğru Cevap: B Açıklama: Videoda vurgulandığı üzere, veri bilimcilerin en sık düştüğü tuzak teknik eksiklik değil, iş problemini yanlış ya da eksik tanımlamaktır. İş bağlamını anlamadan kurulan model, ne kadar istatistiksel olarak başarılı olursa olsun organizasyona değer katmaz.",
+    "crumbs": [
+      "Çalışma 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#kişisel-değişkenler-ve-k-hesabı",
+    "href": "portfolyo/calisma1.html#kişisel-değişkenler-ve-k-hesabı",
+    "title": "Çalışma 1",
+    "section": "4.1 – Kişisel Değişkenler ve k Hesabı",
+    "text": "4.1 – Kişisel Değişkenler ve k Hesabı\n\n\nKodu Göster\n# Kişisel değişkenler\nmy_first     &lt;- \"SERTAÇ\"\nmy_birth_year &lt;- 1998\n\n# k hesabı: 8 ile 22 arasında garantili\nk &lt;- (nchar(my_first) + my_birth_year) %% 15 + 8\n\ncat(\"my_first      :\", my_first, \"\\n\")\n\n\nmy_first      : SERTAÇ \n\n\nKodu Göster\ncat(\"my_birth_year :\", my_birth_year, \"\\n\")\n\n\nmy_birth_year : 1998 \n\n\nKodu Göster\ncat(\"nchar(my_first):\", nchar(my_first), \"\\n\")\n\n\nnchar(my_first): 6 \n\n\nKodu Göster\ncat(\"k             :\", k, \"\\n\")\n\n\nk             : 17 \n\n\nKodu Göster\ncat(\"k is          :\", ifelse(k %% 2 == 0, \"ÇİFT → head(data, k)\", \"TEK → tail(data, k)\"), \"\\n\")\n\n\nk is          : TEK → tail(data, k)",
+    "crumbs": [
+      "Çalışma 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#veri-setini-yükle",
+    "href": "portfolyo/calisma1.html#veri-setini-yükle",
+    "title": "Çalışma 1",
+    "section": "4.2 – Veri Setini Yükle",
+    "text": "4.2 – Veri Setini Yükle\n\n\nKodu Göster\n# dslabs paketini yükle\nif (!requireNamespace(\"dslabs\", quietly = TRUE)) {\n  install.packages(\"dslabs\")\n}\nlibrary(dslabs)\n\n# Veri setini yükle\ndata(\"polls_us_election_2016\")\n\n# Boyut bilgisi\ncat(\"Veri seti boyutu:\", nrow(polls_us_election_2016), \"satır x\",\n    ncol(polls_us_election_2016), \"sütun\\n\")\n\n\nVeri seti boyutu: 4208 satır x 15 sütun",
+    "crumbs": [
+      "Çalışma 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#orijinal-veriden-k-satır-görüntüle",
+    "href": "portfolyo/calisma1.html#orijinal-veriden-k-satır-görüntüle",
+    "title": "Çalışma 1",
+    "section": "4.3 – Orijinal Veriden k Satır Görüntüle",
+    "text": "4.3 – Orijinal Veriden k Satır Görüntüle\nk = 17 tek sayı olduğu için son 17 satır (tail) görüntülenir.\n\n\nKodu Göster\n# k = 17 (tek) → son 17 satır\noriginal_k_rows &lt;- tail(polls_us_election_2016, k)\n\nknitr::kable(\n  original_k_rows,\n  caption = paste0(\"Orijinal veri setinin son \", k, \" satırı\")\n)\n\n\n\nOrijinal veri setinin son 17 satırı\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nstate\nstartdate\nenddate\npollster\ngrade\nsamplesize\npopulation\nrawpoll_clinton\nrawpoll_trump\nrawpoll_johnson\nrawpoll_mcmullin\nadjpoll_clinton\nadjpoll_trump\nadjpoll_johnson\nadjpoll_mcmullin\n\n\n\n\n4192\nOhio\n2016-06-08\n2016-06-19\nQuinnipiac University\nA-\n971\nrv\n38.00\n36.00\n8.00\nNA\n42.46502\n41.36491\n3.791570\nNA\n\n\n4193\nNew York\n2016-02-28\n2016-03-03\nSiena College\nA\n800\nrv\n57.00\n34.00\nNA\nNA\n56.98850\n38.83402\nNA\nNA\n\n\n4194\nNorth Carolina\n2016-09-27\n2016-10-02\nQuinnipiac University\nA-\n507\nlv\n46.00\n43.00\n7.00\nNA\n47.79437\n44.86935\n4.022323\nNA\n\n\n4195\nNorth Carolina\n2016-02-14\n2016-02-16\nSurveyUSA\nA\n1250\nlv\n43.00\n45.00\nNA\nNA\n39.90517\n44.40152\nNA\nNA\n\n\n4196\nNorth Carolina\n2016-05-20\n2016-05-22\nPublic Policy Polling\nB+\n928\nv\n41.00\n43.00\n3.00\nNA\n43.28262\n47.12021\n-0.036293\nNA\n\n\n4197\nKentucky\n2016-09-30\n2016-10-13\nIpsos\nA-\n336\nlv\n39.38\n53.08\nNA\nNA\n38.34430\n54.36357\nNA\nNA\n\n\n4198\nFlorida\n2016-07-30\n2016-08-07\nQuinnipiac University\nA-\n1056\nlv\n43.00\n43.00\n7.00\nNA\n45.19351\n46.65680\n3.448447\nNA\n\n\n4199\nPennsylvania\n2016-06-08\n2016-06-19\nQuinnipiac University\nA-\n950\nrv\n39.00\n36.00\n9.00\nNA\n43.35339\n41.19061\n4.791570\nNA\n\n\n4200\nOhio\n2016-06-30\n2016-07-11\nQuinnipiac University\nA-\n955\nrv\n36.00\n37.00\n7.00\nNA\n40.73937\n42.33380\n2.936299\nNA\n\n\n4201\nNorth Carolina\n2016-03-18\n2016-03-20\nPublic Policy Polling\nB+\n843\nv\n44.00\n42.00\nNA\nNA\n42.13165\n43.55006\nNA\nNA\n\n\n4202\nSouth Dakota\n2016-10-28\n2016-11-02\nIpsos\nA-\n170\nlv\n28.45\n47.20\nNA\nNA\n26.57791\n45.43384\nNA\nNA\n\n\n4203\nWashington\n2016-10-21\n2016-11-02\nIpsos\nA-\n538\nlv\n46.71\n38.33\nNA\nNA\n45.56387\n38.22545\nNA\nNA\n\n\n4204\nVirginia\n2016-09-16\n2016-09-22\nIpsos\nA-\n452\nlv\n46.54\n40.04\nNA\nNA\n46.47852\n40.48017\nNA\nNA\n\n\n4205\nWisconsin\n2016-08-04\n2016-08-07\nMarquette University\nA\n683\nlv\n47.00\n34.00\n9.00\nNA\n48.74781\n39.07778\n4.705020\nNA\n\n\n4206\nUtah\n2016-11-01\n2016-11-07\nGoogle Consumer Surveys\nB\n286\nlv\n21.33\n35.05\n9.99\nNA\n26.65200\n40.57738\n9.705791\nNA\n\n\n4207\nOregon\n2016-10-21\n2016-11-02\nIpsos\nA-\n446\nlv\n46.46\n37.41\nNA\nNA\n45.12949\n37.10720\nNA\nNA\n\n\n4208\nMichigan\n2016-01-23\n2016-01-26\nEPIC-MRA\nA-\n600\nlv\n43.00\n41.00\nNA\nNA\n42.14966\n42.05508\nNA\nNA",
+    "crumbs": [
+      "Çalışma 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#na-değerlerinin-analizi",
+    "href": "portfolyo/calisma1.html#na-değerlerinin-analizi",
+    "title": "Çalışma 1",
+    "section": "4.4 – NA Değerlerinin Analizi",
+    "text": "4.4 – NA Değerlerinin Analizi\n\n\nKodu Göster\n# Toplam NA sayısı\ntotal_na &lt;- sum(is.na(polls_us_election_2016))\ncat(\"Toplam NA değer sayısı:\", total_na, \"\\n\\n\")\n\n\nToplam NA değer sayısı: 11604 \n\n\nKodu Göster\n# Sütun başına NA sayısı (büyükten küçüğe sıralı, ilk 8 sütun)\nna_per_col &lt;- sort(colSums(is.na(polls_us_election_2016)), decreasing = TRUE)\n\ncat(\"Sütun başına NA sayısı (ilk 8 sütun):\\n\")\n\n\nSütun başına NA sayısı (ilk 8 sütun):\n\n\nKodu Göster\nprint(head(na_per_col, 8))\n\n\nrawpoll_mcmullin adjpoll_mcmullin  rawpoll_johnson  adjpoll_johnson \n            4178             4178             1409             1409 \n           grade       samplesize            state        startdate \n             429                1                0                0 \n\n\nKodu Göster\n# Tablo olarak göster\nknitr::kable(\n  data.frame(\n    Sutun    = names(head(na_per_col, 8)),\n    NA_Sayisi = as.integer(head(na_per_col, 8))\n  ),\n  caption = \"Sütun Başına NA Sayısı (Büyükten Küçüğe, İlk 8)\"\n)\n\n\n\nSütun Başına NA Sayısı (Büyükten Küçüğe, İlk 8)\n\n\nSutun\nNA_Sayisi\n\n\n\n\nrawpoll_mcmullin\n4178\n\n\nadjpoll_mcmullin\n4178\n\n\nrawpoll_johnson\n1409\n\n\nadjpoll_johnson\n1409\n\n\ngrade\n429\n\n\nsamplesize\n1\n\n\nstate\n0\n\n\nstartdate\n0",
+    "crumbs": [
+      "Çalışma 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#na-değerlerini-değiştir-yeni-veri-çerçevesi",
+    "href": "portfolyo/calisma1.html#na-değerlerini-değiştir-yeni-veri-çerçevesi",
+    "title": "Çalışma 1",
+    "section": "4.5 – NA Değerlerini Değiştir (Yeni Veri Çerçevesi)",
+    "text": "4.5 – NA Değerlerini Değiştir (Yeni Veri Çerçevesi)\n\n\nKodu Göster\n# Yeni veri çerçevesini orijinalden kopyala (orijinali değiştirme)\nnew_data &lt;- polls_us_election_2016\n\n# Sayısal sütunlar: NA → my_birth_year + k\nnumeric_replacement &lt;- my_birth_year + k\ncat(\"Sayısal NA yerine konacak değer:\", numeric_replacement, \"\\n\")\n\n\nSayısal NA yerine konacak değer: 2015 \n\n\nKodu Göster\n# Karakter/faktör sütunlar: NA → paste0(my_first, \"_\", k)\nchar_replacement &lt;- paste0(my_first, \"_\", k)\ncat(\"Karakter/Faktör NA yerine konacak değer:\", char_replacement, \"\\n\\n\")\n\n\nKarakter/Faktör NA yerine konacak değer: SERTAÇ_17 \n\n\nKodu Göster\n# Sütun tiplerini belirle ve değiştir\nfor (col in names(new_data)) {\n  if (is.numeric(new_data[[col]])) {\n    new_data[[col]][is.na(new_data[[col]])] &lt;- numeric_replacement\n  } else if (is.character(new_data[[col]]) || is.factor(new_data[[col]])) {\n    if (is.factor(new_data[[col]])) {\n      # Faktör sütunlara yeni seviye ekle\n      levels(new_data[[col]]) &lt;- c(levels(new_data[[col]]), char_replacement)\n    }\n    new_data[[col]][is.na(new_data[[col]])] &lt;- char_replacement\n  }\n}\n\ncat(\"NA değerleri başarıyla değiştirildi.\\n\")\n\n\nNA değerleri başarıyla değiştirildi.",
+    "crumbs": [
+      "Çalışma 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#yeni-veri-çerçevesi-çıktıları",
+    "href": "portfolyo/calisma1.html#yeni-veri-çerçevesi-çıktıları",
+    "title": "Çalışma 1",
+    "section": "4.6 – Yeni Veri Çerçevesi Çıktıları",
+    "text": "4.6 – Yeni Veri Çerçevesi Çıktıları\n\n4.6.1 – Yeni Veri Çerçevesinin k Satırı\nk = 17 tek olduğu için son 17 satır görüntülenir.\n\n\nKodu Göster\nnew_k_rows &lt;- tail(new_data, k)\n\nknitr::kable(\n  new_k_rows,\n  caption = paste0(\"Yeni veri çerçevesinin son \", k, \" satırı\")\n)\n\n\n\nYeni veri çerçevesinin son 17 satırı\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nstate\nstartdate\nenddate\npollster\ngrade\nsamplesize\npopulation\nrawpoll_clinton\nrawpoll_trump\nrawpoll_johnson\nrawpoll_mcmullin\nadjpoll_clinton\nadjpoll_trump\nadjpoll_johnson\nadjpoll_mcmullin\n\n\n\n\n4192\nOhio\n2016-06-08\n2016-06-19\nQuinnipiac University\nA-\n971\nrv\n38.00\n36.00\n8.00\n2015\n42.46502\n41.36491\n3.791570\n2015\n\n\n4193\nNew York\n2016-02-28\n2016-03-03\nSiena College\nA\n800\nrv\n57.00\n34.00\n2015.00\n2015\n56.98850\n38.83402\n2015.000000\n2015\n\n\n4194\nNorth Carolina\n2016-09-27\n2016-10-02\nQuinnipiac University\nA-\n507\nlv\n46.00\n43.00\n7.00\n2015\n47.79437\n44.86935\n4.022323\n2015\n\n\n4195\nNorth Carolina\n2016-02-14\n2016-02-16\nSurveyUSA\nA\n1250\nlv\n43.00\n45.00\n2015.00\n2015\n39.90517\n44.40152\n2015.000000\n2015\n\n\n4196\nNorth Carolina\n2016-05-20\n2016-05-22\nPublic Policy Polling\nB+\n928\nv\n41.00\n43.00\n3.00\n2015\n43.28262\n47.12021\n-0.036293\n2015\n\n\n4197\nKentucky\n2016-09-30\n2016-10-13\nIpsos\nA-\n336\nlv\n39.38\n53.08\n2015.00\n2015\n38.34430\n54.36357\n2015.000000\n2015\n\n\n4198\nFlorida\n2016-07-30\n2016-08-07\nQuinnipiac University\nA-\n1056\nlv\n43.00\n43.00\n7.00\n2015\n45.19351\n46.65680\n3.448447\n2015\n\n\n4199\nPennsylvania\n2016-06-08\n2016-06-19\nQuinnipiac University\nA-\n950\nrv\n39.00\n36.00\n9.00\n2015\n43.35339\n41.19061\n4.791570\n2015\n\n\n4200\nOhio\n2016-06-30\n2016-07-11\nQuinnipiac University\nA-\n955\nrv\n36.00\n37.00\n7.00\n2015\n40.73937\n42.33380\n2.936299\n2015\n\n\n4201\nNorth Carolina\n2016-03-18\n2016-03-20\nPublic Policy Polling\nB+\n843\nv\n44.00\n42.00\n2015.00\n2015\n42.13165\n43.55006\n2015.000000\n2015\n\n\n4202\nSouth Dakota\n2016-10-28\n2016-11-02\nIpsos\nA-\n170\nlv\n28.45\n47.20\n2015.00\n2015\n26.57791\n45.43384\n2015.000000\n2015\n\n\n4203\nWashington\n2016-10-21\n2016-11-02\nIpsos\nA-\n538\nlv\n46.71\n38.33\n2015.00\n2015\n45.56387\n38.22545\n2015.000000\n2015\n\n\n4204\nVirginia\n2016-09-16\n2016-09-22\nIpsos\nA-\n452\nlv\n46.54\n40.04\n2015.00\n2015\n46.47852\n40.48017\n2015.000000\n2015\n\n\n4205\nWisconsin\n2016-08-04\n2016-08-07\nMarquette University\nA\n683\nlv\n47.00\n34.00\n9.00\n2015\n48.74781\n39.07778\n4.705020\n2015\n\n\n4206\nUtah\n2016-11-01\n2016-11-07\nGoogle Consumer Surveys\nB\n286\nlv\n21.33\n35.05\n9.99\n2015\n26.65200\n40.57738\n9.705791\n2015\n\n\n4207\nOregon\n2016-10-21\n2016-11-02\nIpsos\nA-\n446\nlv\n46.46\n37.41\n2015.00\n2015\n45.12949\n37.10720\n2015.000000\n2015\n\n\n4208\nMichigan\n2016-01-23\n2016-01-26\nEPIC-MRA\nA-\n600\nlv\n43.00\n41.00\n2015.00\n2015\n42.14966\n42.05508\n2015.000000\n2015\n\n\n\n\n\n\n\n4.6.2 – Kalan NA Sayısı\n\n\nKodu Göster\nremaining_na &lt;- sum(is.na(new_data))\ncat(\"Yeni veri çerçevesindeki kalan NA sayısı:\", remaining_na, \"\\n\")\n\n\nYeni veri çerçevesindeki kalan NA sayısı: 0 \n\n\n\n\n4.6.3 – anyNA Kontrolü\n\n\nKodu Göster\n# Doğru değiştirme yapıldıysa FALSE döndürmeli\nresult &lt;- anyNA(new_data)\ncat(\"anyNA(new_data) =\", result, \"\\n\")\n\n\nanyNA(new_data) = FALSE \n\n\nKodu Göster\nif (!result) {\n  cat(\"✓ Tüm NA değerleri başarıyla değiştirildi!\\n\")\n} else {\n  cat(\"✗ Hâlâ NA değerleri bulunuyor, kontrol edin.\\n\")\n}\n\n\n✓ Tüm NA değerleri başarıyla değiştirildi!\n\n\n\nBu çalışmada R kodu üretilmesinde yapay zeka (Claude) desteğinden yararlanılmıştır. Kodun mantığı ve çıktıları tarafımdan incelenip doğrulanmıştır.",
+    "crumbs": [
+      "Çalışma 1"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Hakkımda",
+    "section": "",
+    "text": "Üretim & Test Mühendisi · Mühendislik Yönetimi Yüksek Lisans Öğrencisi\n    \n    📍 Ankara, Türkiye\n    🏭 Roketsan\n    🎓 Hacettepe Üniversitesi"
+  },
+  {
+    "objectID": "about.html#eğitim",
+    "href": "about.html#eğitim",
+    "title": "Hakkımda",
+    "section": "🎓 Eğitim",
+    "text": "🎓 Eğitim\n\n\nHacettepe Üniversitesi — Mühendislik Yönetimi (Yüksek Lisans)\n\n\n2025 – Devam ediyor · Ankara · MÜY665 İş Analitiği\n\n\n\n\nGazi Üniversitesi — Metalürji ve Malzeme Mühendisliği (Lisans)\n\n\n2017 – 2021 · Ankara"
+  },
+  {
+    "objectID": "about.html#iş-deneyimi",
+    "href": "about.html#iş-deneyimi",
+    "title": "Hakkımda",
+    "section": "💼 İş Deneyimi",
+    "text": "💼 İş Deneyimi\n\n\nRoketsan — Uzman Üretim ve Test Mühendisi\n\n\n2023 – Devam ediyor · İnertial Measurement Unit alt bileşen geliştirme, fiber optik bobin iyileştirme (Six Sigma)\n\n\n\n\nEr-Bakır Elektrolitik Bakır Ürünleri A.Ş. — Tel Çekme Uzman Mühendisi\n\n\n2022 – 2023 · Üretim süreç optimizasyonu ve kalite yönetimi\n\n\n\n\nNurol Teknoloji A.Ş. — Seramik Üretim Mühendisi\n\n\n2020 – 2022 · Zırh seramik üretimi ve malzeme geliştirme\n\n\n\n\nNurol Teknoloji A.Ş. — Stajyer Aday Mühendis\n\n\n2020 · Üretim süreçlerine giriş stajı"
+  },
+  {
+    "objectID": "about.html#projeler",
+    "href": "about.html#projeler",
+    "title": "Hakkımda",
+    "section": "🔬 Projeler",
+    "text": "🔬 Projeler\n\n\n%5 B₄C Katkılı Doğrudan Sinterleme SiC Zırh Malzemesi Geliştirme\n\n\nBalistik performans araştırması ve malzeme karakterizasyonu\n\n\n\n\nİki Aşamalı Sinterleme ile Tane Büyümesi Önleme\n\n\nMikroyapı kontrolü ve mekanik özellik iyileştirme\n\n\n\n\nSıvı Faz Sinterleme ile SiC Zırh Seramik Karo Üretimi\n\n\nAlternatif sinterleme yöntemi araştırması\n\n\n\n\nIMU Alt Bileşen İyileştirme Projesi (Six Sigma)\n\n\nDMAIC metodolojisi ile süreç yeterliliği artırma · Roketsan\n\n\n\n\nFiber Optik Bobin İyileştirme Projesi (Six Sigma)\n\n\nSarım kalitesi ve sinyal performansı optimizasyonu · Roketsan"
+  },
+  {
+    "objectID": "about.html#yetkinlikler",
+    "href": "about.html#yetkinlikler",
+    "title": "Hakkımda",
+    "section": "🛠 Yetkinlikler",
+    "text": "🛠 Yetkinlikler\n\n Programlama & Analitik  R Quarto Git & GitHub Minitab\n\n\n Mühendislik Araçları  AutoCAD SAP Oracle Avix\n\n\n Metodoloji  Six Sigma (DMAIC) İstatistiksel Proses Kontrol &lt;span class=”"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Sertaç EKER'in Analitik Labı",
+    "section": "",
+    "text": "Merhaba, ben Sertaç 👋\n  Üretim Mühendisi · Mühendislik Yönetimi Yüksek Lisans Öğrencisi · Veri Tutkunu\n  🎓 Hacettepe Üniversitesi\n  🏭 Roketsan\n  📊 MÜY665 İş Analitiği\n  🔬 Six Sigma\nBu sitede MÜY665 İş Analitiği dersi kapsamında yaptığım analitik çalışmalarımı, veri projelerimi ve ödevlerimi paylaşıyorum. Metalürji mühendisliği geçmişimi veri bilimi ile birleştirerek üretim ve savunma sanayiinde anlamlı içgörüler üretmeyi hedefliyorum."
+  },
+  {
+    "objectID": "index.html#neler-bulabilirsiniz",
+    "href": "index.html#neler-bulabilirsiniz",
+    "title": "Sertaç EKER'in Analitik Labı",
+    "section": "Neler Bulabilirsiniz?",
+    "text": "Neler Bulabilirsiniz?\n\n\n📚 Ödev Çalışmaları\n\n\nMÜY665 İş Analitiği dersi kapsamında R ile yapılan veri analizi ödevleri — polls_us_election_2016 veri setinden başlayarak ilerleyen analitik çalışmalar.\n\n\n\n\n🔍 Veri Analizleri\n\n\nGerçek veri setleri üzerinde keşifsel analiz, görselleştirme ve istatistiksel modelleme çalışmaları. Her analiz tekrarlanabilir kod ile belgelenmiştir.\n\n\n\n\n🧪 Proje Çalışmaları\n\n\nÜretim süreç"
+  },
+  {
+    "objectID": "portfolyo/calisma2.html",
+    "href": "portfolyo/calisma2.html",
+    "title": "Çalışma 2",
+    "section": "",
+    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz.",
+    "crumbs": [
+      "Çalışma 2"
     ]
   },
   {
@@ -412,151 +250,6 @@
     "crumbs": [
       "Çalışma 2"
     ]
-  },
-  {
-    "objectID": "portfolyo/calisma1.html#b",
-    "href": "portfolyo/calisma1.html#b",
-    "title": "Çalışma 1",
-    "section": "(b)",
-    "text": "(b)",
-    "crumbs": [
-      "Çalışma 1"
-    ]
-  },
-  {
-    "objectID": "takim/dusantadic.html",
-    "href": "takim/dusantadic.html",
-    "title": "Dusan Tadic",
-    "section": "",
-    "text": "Assignment 2\n\n1 + 1\n\n[1] 2\n\n\n\n\n\n\n Back to top",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Dusan Tadic"
-    ]
-  },
-  {
-    "objectID": "takim/szymanski.html#employements",
-    "href": "takim/szymanski.html#employements",
-    "title": "Sebastian Szymański",
-    "section": "Employements",
-    "text": "Employements\n\nFirm xxx, position xx, year xxx\nFirm yyy, position yyy, year yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Sebastian Szymański"
-    ]
-  },
-  {
-    "objectID": "takim/szymanski.html#internships",
-    "href": "takim/szymanski.html#internships",
-    "title": "Sebastian Szymański",
-    "section": "Internships",
-    "text": "Internships\n\nFirm aaa, position xx, year xxx\nFirm bbb, position yyy, year yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Sebastian Szymański"
-    ]
-  },
-  {
-    "objectID": "takim/szymanski.html#işler",
-    "href": "takim/szymanski.html#işler",
-    "title": "Sebastian Szymański",
-    "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Sebastian Szymański"
-    ]
-  },
-  {
-    "objectID": "takim/szymanski.html#stajlar",
-    "href": "takim/szymanski.html#stajlar",
-    "title": "Sebastian Szymański",
-    "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Sebastian Szymański"
-    ]
-  },
-  {
-    "objectID": "takim/edindzeko.html#işler",
-    "href": "takim/edindzeko.html#işler",
-    "title": "Edin_Džeko",
-    "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Edin_Džeko"
-    ]
-  },
-  {
-    "objectID": "takim/edindzeko.html#stajlar",
-    "href": "takim/edindzeko.html#stajlar",
-    "title": "Edin_Džeko",
-    "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Edin_Džeko"
-    ]
-  },
-  {
-    "objectID": "takim/fred.html#işler",
-    "href": "takim/fred.html#işler",
-    "title": "Frederico Rodrigues",
-    "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Frederico Rodrigues"
-    ]
-  },
-  {
-    "objectID": "takim/fred.html#stajlar",
-    "href": "takim/fred.html#stajlar",
-    "title": "Frederico Rodrigues",
-    "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Frederico Rodrigues"
-    ]
-  },
-  {
-    "objectID": "takim/dusantadic.html#işler",
-    "href": "takim/dusantadic.html#işler",
-    "title": "Dusan Tadic",
-    "section": "İşler",
-    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Dusan Tadic"
-    ]
-  },
-  {
-    "objectID": "takim/dusantadic.html#stajlar",
-    "href": "takim/dusantadic.html#stajlar",
-    "title": "Dusan Tadic",
-    "section": "Stajlar",
-    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
-    "crumbs": [
-      "Takım Üyeleri",
-      "Dusan Tadic"
-    ]
-  },
-  {
-    "objectID": "about.html#employements",
-    "href": "about.html#employements",
-    "title": "Hakkımda",
-    "section": "Employements",
-    "text": "Employements\n\nFirm xxx, position xx, year xxx\nFirm yyy, position yyy, year yyy"
-  },
-  {
-    "objectID": "about.html#internships",
-    "href": "about.html#internships",
-    "title": "Hakkımda",
-    "section": "Internships",
-    "text": "Internships\n\nFirm aaa, position xx, year xxx\nFirm bbb, position yyy, year yyy"
   },
   {
     "objectID": "posts.html",
