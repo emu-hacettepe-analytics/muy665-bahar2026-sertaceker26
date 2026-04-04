@@ -14,7 +14,7 @@ sidebar: false
 </div>
 ```
 
-Bu sitede **MÜY665 İş Analitiği** dersi kapsamında yaptığım analitik çalışmalarımı, veri projelerimi ve ödevlerimi paylaşıyorum. Metalürji mühendisliği geçmişimi veri bilimi ile birleştirerek üretim ve savunma sanayiinde anlamlı içgörüler üretmeyi hedefliyorum.
+Bu sitede **MÜY665 İş Analitiği** dersi kapsamında yaptığım analitik çalışmalarımı, veri projelerimi ve ödevlerimi paylaşıyorum. Malzeme mühendisliği geçmişimi veri bilimi ile birleştirerek üretim ve savunma sanayiinde anlamlı içgörüler üretmeyi hedefliyorum.
 
 ------------------------------------------------------------------------
 
@@ -47,7 +47,7 @@ Bu sitede **MÜY665 İş Analitiği** dersi kapsamında yaptığım analitik ça
 :::
 
 ::: info-card-sub
-MÜY665 İş Analitiği dersi kapsamında R ile yapılan veri analizi ödevleri — `polls_us_election_2016` veri setinden başlayarak ilerleyen analitik çalışmalar.
+MÜY665 İş Analitiği dersi kapsamında R ile yapılan veri analizi ödevleri ile analitik çalışmalar.
 :::
 :::::
 
@@ -61,12 +61,10 @@ Gerçek veri setleri üzerinde keşifsel analiz, görselleştirme ve istatistiks
 :::
 :::::
 
-::::: info-card
+:::: info-card
 ::: info-card-title
 🧪 Proje Çalışmaları
-:::
 
-::: info-card-sub
-Üretim süreç
+Coming Soon...
 :::
-:::::
+::::
