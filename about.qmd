@@ -11,7 +11,7 @@ sidebar: false
   <div>
     <h1 style="margin:0; font-size:2rem; font-weight:800; color:#3b0764;">Sertaç Eker</h1>
     <p style="margin:.4rem 0 .8rem; color:#6b7280; font-size:1rem;">
-      Üretim & Test Mühendisi · İş Analitiği Yüksek Lisans Öğrencisi
+      Üretim & Test Mühendisi · Mühendislik Yönetimi Yüksek Lisans Öğrencisi
     </p>
     <span class="hero-badge">📍 Ankara, Türkiye</span>
     <span class="hero-badge">🏭 Roketsan</span>

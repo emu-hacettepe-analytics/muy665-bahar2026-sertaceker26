@@ -6,7 +6,7 @@ sidebar: false
 ```{=html}
 <div class="hero-section">
   <p class="hero-title">Merhaba, ben Sertaç 👋</p>
-  <p class="hero-subtitle">Üretim Mühendisi · İş Analitiği Yüksek Lisans Öğrencisi · Veri Tutkunu</p>
+  <p class="hero-subtitle">Üretim Mühendisi · Mühendislik Yönetimi Yüksek Lisans Öğrencisi · Veri Tutkunu</p>
   <span class="hero-badge">🎓 Hacettepe Üniversitesi</span>
   <span class="hero-badge">🏭 Roketsan</span>
   <span class="hero-badge">📊 MÜY665 İş Analitiği</span>
