@@ -148,29 +148,16 @@ Sarım kalitesi ve sinyal performansı optimizasyonu · Roketsan
 
 ## 🛠 Yetkinlikler
 
-```{=html}
-<div style="margin: 1rem 0;">
-  <strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;">
-    Programlama & Analitik
-  </strong><br><br>
-  <span class="skill-tag">R</span>
-  <span class="skill-tag">Quarto</span>
-  <span class="skill-tag">Git & GitHub</span>
-  <span class="skill-tag">Minitab</span>
-</div>
-<div style="margin: 1rem 0;">
-  <strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;">
-    Mühendislik Araçları
-  </strong><br><br>
-  <span class="skill-tag">AutoCAD</span>
-  <span class="skill-tag">SAP</span>
-  <span class="skill-tag">Oracle</span>
-  <span class="skill-tag">Avix</span>
-</div>
-<div style="margin: 1rem 0;">
-  <strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;">
-    Metodoloji
-  </strong><br><br>
-  <span class="skill-tag">Six Sigma (DMAIC)</span>
-  <span class="skill-tag">İstatistiksel Proses Kontrol</span>
-  <span class="
+\`\`\`{=html}
+
+::: {style="margin: 1rem 0;"}
+<strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;"> Programlama & Analitik </strong><br><br> [R]{.skill-tag} [Quarto]{.skill-tag} [Git & GitHub]{.skill-tag} [Minitab]{.skill-tag}
+:::
+
+::: {style="margin: 1rem 0;"}
+<strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;"> Mühendislik Araçları </strong><br><br> [AutoCAD]{.skill-tag} [SAP]{.skill-tag} [Oracle]{.skill-tag} [Avix]{.skill-tag}
+:::
+
+::: {style="margin: 1rem 0;"}
+<strong style="color:#5b21b6; font-size:0.8rem; text-transform:uppercase; letter-spacing:.08em;"> Metodoloji </strong><br><br> [Six Sigma (DMAIC)]{.skill-tag} [İstatistiksel Proses Kontrol]{.skill-tag} \<span class="
+:::
