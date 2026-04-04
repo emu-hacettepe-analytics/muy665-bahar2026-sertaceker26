@@ -67,6 +67,4 @@ Gerçek veri setleri üzerinde keşifsel analiz, görselleştirme ve istatistiks
 :::
 
 ::: info-card-sub
-Üretim süreçleri ve mühendislik problemlerine veri odaklı yaklaşımlar. Six Sigma metodolojisi ile veri biliminin kesişimi.
-:::
-:::::
+Üretim süreç

@@ -47,10 +47,15 @@ format:
   html:
     toc: true
     toc-location: left
-    theme: 
-      light: simplex 
-      dark: cyborg
+    toc-title: "İçindekiler"
+    theme:
+      light: flatly
+      dark:  vapor
     css: styles.css
+    smooth-scroll: true
+    highlight-style: a11y
+    code-copy: true
+    code-overflow: wrap
 
 
 editor: visual

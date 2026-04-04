@@ -173,23 +173,4 @@ Sarım kalitesi ve sinyal performansı optimizasyonu · Roketsan
   </strong><br><br>
   <span class="skill-tag">Six Sigma (DMAIC)</span>
   <span class="skill-tag">İstatistiksel Proses Kontrol</span>
-  <span class="skill-tag">Veri Görselleştirme</span>
-</div>
-```
-
-------------------------------------------------------------------------
-
-## 🏄 Hobiler
-
-```{=html}
-<div style="display:flex; gap:.6rem; flex-wrap:wrap; margin-top:.5rem;">
-  <span class="hero-badge">🤿 Serbest Dalış</span>
-  <span class="hero-badge">⛷️ Kayak</span>
-  <span class="hero-badge">🏊 Yüzme</span>
-  <span class="hero-badge">✈️ Seyahat</span>
-</div>
-```
-
-------------------------------------------------------------------------
-
-📄 [**CV İndir (PDF)**](cv.pdf)
+  <span class="
