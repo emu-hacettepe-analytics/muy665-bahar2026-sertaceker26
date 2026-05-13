@@ -1,56 +1,620 @@
 ---
-title: "Proje X (proje adını yazınız)"
+title: "Türkiye Elektrik Piyasası ve Makroekonomik Göstergelerin Bütünleşik Analizi"
+subtitle: "EPİAŞ × TCMB × TÜİK Verileriyle Kapsamlı Bir Veri Bilimi Çalışması"
+author: "Sertaç Eker"
+date: today
+date-format: "DD MMMM YYYY"
+lang: tr
 number-sections: true
+toc: true
+toc-depth: 3
+code-fold: true
+code-summary: "Kodu göster"
+execute:
+  warning: false
+  message: false
+  echo: true
 ---
 
-**Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.**
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  fig.align = "center",
+  fig.width = 9,
+  fig.height = 5.5,
+  dpi = 110,
+  cache = FALSE
+)
 
-(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)
+suppressPackageStartupMessages({
+  library(tidyverse); library(lubridate); library(scales)
+  library(patchwork); library(viridis); library(GGally)
+  library(corrplot); library(skimr); library(knitr); library(kableExtra)
+  library(forecast); library(tseries); library(zoo)
+  library(FactoMineR); library(factoextra)
+  library(tidymodels); library(ranger); library(xgboost); library(vip)
+})
+
+theme_proje <- function(base_size = 12) {
+  theme_minimal(base_size = base_size) +
+    theme(
+      plot.title = element_text(face = "bold", size = base_size + 2),
+      plot.subtitle = element_text(color = "grey35"),
+      plot.caption = element_text(color = "grey45", hjust = 0),
+      panel.grid.minor = element_blank(),
+      legend.position = "bottom"
+    )
+}
+theme_set(theme_proje())
+
+renkler <- c(
+  "Doğalgaz" = "#E45756",
+  "Kömür"    = "#54545C",
+  "Hidro"    = "#4C78A8",
+  "Rüzgar"   = "#72B7B2",
+  "Güneş"    = "#F1B82D",
+  "Diğer"    = "#9D755D"
+)
+
+tbl <- function(df, caption = NULL, digits = 2, vurgu_satir = NULL) {
+  k <- kable(df, caption = caption, digits = digits, booktabs = TRUE)
+  k <- kable_styling(k,
+                     bootstrap_options = c("striped","hover"),
+                     latex_options = c("striped","hold_position","scale_down"),
+                     full_width = FALSE)
+  if (!is.null(vurgu_satir))
+    k <- row_spec(k, vurgu_satir, bold = TRUE, background = "#FFF3CD")
+  k
+}
+
+if (!file.exists("data/elektrik_gunluk.csv")) {
+  source("R/01_simulate_data.R")
+}
+```
+
+**Projemizle ilgili güncellemelerden haberdar olmak için bu sayfayı takip edin.**
 
 # Proje Genel Bakış ve Kapsamı
 
-xxxxxx
+Türkiye, dünyanın en büyük 20. elektrik tüketicisi olup, elektrik piyasası ekonominin tüm sektörleri için kritik bir altyapı oluşturmaktadır. Son 10 yılda elektrik talebi yıllık ortalama %3-4 büyürken, kur ve enflasyon kaynaklı maliyet baskısı Piyasa Takas Fiyatı'nı (PTF) 2018'den 2024'e kadar nominal olarak yaklaşık **8 kat** artırmıştır.
+
+Bu projede, üç farklı resmî kaynaktan elde edilen verileri birleştirerek elektrik tüketiminin ve fiyatlarının makroekonomik göstergelerle ilişkisi incelenmektedir:
+
+-   **EPİAŞ Şeffaflık Platformu** — saatlik tüketim, üretim, kaynak kırılımı, PTF
+-   **TCMB EVDS** — döviz kuru, enflasyon, politika faizi
+-   **TÜİK** — sanayi üretim endeksi, sektörel elektrik tüketimi, demografi
+
+Çalışmanın temel araştırma soruları şunlardır:
+
+1.  **Tüketim profili nasıl değişiyor?** Saatlik, haftalık ve mevsimsel örüntüler ne kadar belirgin?
+2.  **Hangi makro değişkenler PTF'yi sürüklüyor?** Kur, enflasyon, faiz arasındaki ilişki nasıl?
+3.  **Sanayi üretimi elektrik tüketimini ne kadar açıklıyor?** TÜİK Sanayi Üretim Endeksi (SÜE) ile sektörel tüketim ne kadar uyumlu?
+4.  **En iyi tahmin modeli hangisi?** ARIMA / ETS gibi klasik istatistiksel yöntemler ile Random Forest / XGBoost gibi makine öğrenmesi modellerinin performansı nasıl karşılaştırılır?
+
+> **Yeniden üretilebilirlik:** Tüm analizler `set.seed(2026)` ile sabitlenmiştir. Veri üretimi `R/01_simulate_data.R`, paket kurulumu `R/02_paketler.R` scriptleriyle belgelenmiştir.
 
 # Veri
 
-xxxxxx
-
 ## Veri Kaynağı
 
-xxxxxx
+```{r tablo-kaynaklar, echo=FALSE}
+tibble(
+  Kaynak = c("EPİAŞ Şeffaflık", "TCMB EVDS", "TÜİK"),
+  URL = c("seffaflik.epias.com.tr",
+          "evds2.tcmb.gov.tr",
+          "data.tuik.gov.tr"),
+  `Frekans` = c("Saatlik / Günlük", "Aylık", "Aylık"),
+  `Anahtar Değişkenler` = c("Tüketim, Üretim, PTF, Kaynak kırılımı",
+                            "USD/TRY, EUR/TRY, TÜFE, Politika Faizi",
+                            "Sanayi Üretim Endeksi, Sektörel Tüketim, Nüfus")
+) |> tbl(caption = "Kullanılan veri kaynakları")
+```
+
+EPİAŞ Şeffaflık, TCMB EVDS ve TÜİK API'leri kullanıcı kaydı ve API anahtarı gerektirmektedir. Bu nedenle proje, Türkiye'nin gerçek elektrik ve makroekonomik dinamiklerine sadık kalınarak `set.seed(2026)` ile **yeniden üretilebilir biçimde simüle edilmiş** veri seti üzerinden çalışmaktadır. `data/README.md` dosyasındaki kolon şeması korunarak gerçek CSV'lerle değiştirildiğinde rapor kod değişikliği gerektirmeden yeniden render edilebilir.
 
 ## Veri Hakkında Genel Bilgiler
 
-xxxxxx
+### Veri Boyutları
+
+```{r veri-yukle, echo=FALSE}
+elektrik_gunluk    <- read_csv("data/elektrik_gunluk.csv",       show_col_types = FALSE)
+elektrik_saatlik   <- read_csv("data/elektrik_saatlik.csv",      show_col_types = FALSE)
+tcmb_aylik         <- read_csv("data/tcmb_aylik.csv",            show_col_types = FALSE)
+tuik_aylik         <- read_csv("data/tuik_aylik.csv",            show_col_types = FALSE)
+birlesik_aylik     <- read_csv("data/birlestirilmis_aylik.csv",  show_col_types = FALSE)
+
+elektrik_gunluk <- elektrik_gunluk |>
+  mutate(
+    tarih = as.Date(tarih),
+    gun_haftasi = factor(gun_haftasi,
+                         levels = c("Pazartesi","Salı","Çarşamba","Perşembe",
+                                    "Cuma","Cumartesi","Pazar")),
+    hafta_ici = if_else(gun_haftasi %in% c("Cumartesi","Pazar"),
+                        "Hafta Sonu","Hafta İçi") |> factor()
+  )
+
+boyut_tablosu <- tibble(
+  `Veri Seti` = c("Saatlik elektrik (EPİAŞ)",
+                  "Günlük elektrik",
+                  "Aylık TCMB",
+                  "Aylık TÜİK",
+                  "Birleşik aylık"),
+  `Gözlem` = c(nrow(elektrik_saatlik), nrow(elektrik_gunluk),
+               nrow(tcmb_aylik), nrow(tuik_aylik), nrow(birlesik_aylik)),
+  `Değişken` = c(ncol(elektrik_saatlik), ncol(elektrik_gunluk),
+                 ncol(tcmb_aylik), ncol(tuik_aylik), ncol(birlesik_aylik)),
+  `Başlangıç` = c(as.character(min(elektrik_saatlik$tarih)),
+                  as.character(min(elektrik_gunluk$tarih)),
+                  as.character(min(tcmb_aylik$tarih)),
+                  as.character(min(tuik_aylik$tarih)),
+                  as.character(min(birlesik_aylik$tarih))),
+  `Bitiş` = c(as.character(max(elektrik_saatlik$tarih)),
+              as.character(max(elektrik_gunluk$tarih)),
+              as.character(max(tcmb_aylik$tarih)),
+              as.character(max(tuik_aylik$tarih)),
+              as.character(max(birlesik_aylik$tarih)))
+)
+tbl(boyut_tablosu, caption = "Veri seti boyutları", digits = 0)
+```
+
+### Özet İstatistikler
+
+```{r ozet-istatistik}
+elektrik_gunluk |>
+  select(tuketim_mwh, uretim_mwh, ptf_ortalama_tl_mwh, ortalama_sicaklik_c) |>
+  skim() |>
+  yank("numeric") |>
+  select(skim_variable, mean, sd, p0, p50, p100) |>
+  rename(Değişken = skim_variable, Ortalama = mean, `Std. Sapma` = sd,
+         Min = p0, Medyan = p50, Maks = p100) |>
+  tbl(caption = "Günlük elektrik verilerinin temel istatistikleri", digits = 0)
+```
+
+### Eksik Veri Analizi
+
+```{r eksik-veri, fig.height=3.5}
+eksik_df <- elektrik_gunluk |>
+  summarise(across(everything(), ~ sum(is.na(.)))) |>
+  pivot_longer(everything(), names_to = "Değişken", values_to = "Eksik")
+
+ggplot(eksik_df, aes(reorder(Değişken, Eksik), Eksik)) +
+  geom_col(fill = "#4C78A8") +
+  coord_flip() +
+  labs(title = "Eksik gözlem sayısı (günlük elektrik veri seti)",
+       x = NULL, y = "Eksik değer")
+```
+
+Tüm değişkenlerde eksik değer **bulunmamaktadır**; veri analize hazırdır.
 
 ## Tercih Sebebi
 
-xxxxxx
+Elektrik piyasası, Türkiye'de hem **arz-talep dinamikleri** hem de **makroekonomik göstergelere bağımlılığı** ile öne çıkan kritik bir sektördür. Bu üç veri kaynağı birlikte kullanıldığında şu zenginlik elde edilir:
+
+-   **EPİAŞ** mikro seviyede (saatlik) talep ve fiyat dinamiklerini sunar.
+-   **TCMB** makro çerçeveyi (kur, enflasyon, faiz) sağlar — elektrik maliyetinin önemli sürükleyicileridir.
+-   **TÜİK** reel ekonomi (sanayi üretimi, demografi) ile bağlantı kurar.
+
+Üç kaynağı birleştirmek, elektrik tüketim ve fiyatlarını yalnızca mevsimsel/hava koşullarıyla değil; **kur şokları, enflasyon ve sanayi üretim çevrimleri** ile birlikte modellememizi sağlar — ki bu, gerçek karar süreçlerinde kullanılan analitik çerçeveye en yakın yaklaşımdır.
 
 ## Ön İşleme
 
-xxxxxx
+Veriler `readr::read_csv` ile yüklenmiş, tarih sütunları `lubridate` ile dönüştürülmüş, kategorik değişkenler faktöre çevrilmiştir. Saatlik, günlük ve aylık olmak üzere üç farklı zaman frekansı korunmuş; korelasyon ve modelleme aşamasında üç kaynak `tarih` anahtarıyla aylık seviyede birleştirilerek `birlestirilmis_aylik.csv` üretilmiştir.
+
+``` r
+elektrik_gunluk <- read_csv("data/elektrik_gunluk.csv") |>
+  mutate(tarih = as.Date(tarih),
+         gun_haftasi = factor(gun_haftasi, levels = günler))
+```
+
+Veri tipleri, eksik değerler ve aykırı gözlemler EDA aşamasında kontrol edilmiştir.
 
 # Analiz
 
-xxxxxx
-
 ## Keşifsel Veri Analizi
 
-xxxxxx
+### Tüketim Dağılımı
+
+```{r tuketim-dagilim, fig.width=10, fig.height=4}
+p1 <- ggplot(elektrik_gunluk, aes(tuketim_mwh / 1000)) +
+  geom_histogram(bins = 50, fill = "#4C78A8", color = "white", alpha = .9) +
+  geom_vline(aes(xintercept = mean(tuketim_mwh / 1000)),
+             color = "#E45756", linetype = "dashed", linewidth = .8) +
+  labs(title = "Günlük tüketim dağılımı",
+       subtitle = "Kırmızı çizgi: ortalama",
+       x = "Tüketim (GWh)", y = "Frekans") +
+  scale_x_continuous(labels = comma)
+
+p2 <- ggplot(elektrik_gunluk, aes(y = tuketim_mwh / 1000, x = factor(yil))) +
+  geom_boxplot(fill = "#72B7B2", outlier.alpha = .3) +
+  labs(title = "Yıllara göre tüketim",
+       x = "Yıl", y = "Tüketim (GWh)") +
+  scale_y_continuous(labels = comma)
+
+p1 + p2
+```
+
+Günlük tüketim **çift modlu** bir dağılım sergilemektedir — bu, hafta içi/hafta sonu ile yaz/kış mevsimsel ayrımının izidir. Yıllık eğilim istikrarlı bir büyüme göstermektedir.
+
+### Mevsimsellik — Isı Haritası
+
+```{r heatmap-mevsim, fig.width=10, fig.height=5}
+tr_ay <- c("Ocak","Şubat","Mart","Nisan","Mayıs","Haziran",
+           "Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık")
+
+heatmap_df <- elektrik_gunluk |>
+  mutate(yil = year(tarih),
+         ay  = factor(tr_ay[month(tarih)], levels = tr_ay)) |>
+  group_by(yil, ay) |>
+  summarise(ort_tuketim = mean(tuketim_mwh) / 1000, .groups = "drop")
+
+ggplot(heatmap_df, aes(ay, factor(yil), fill = ort_tuketim)) +
+  geom_tile(color = "white", linewidth = .3) +
+  scale_fill_viridis_c(option = "C", labels = comma, name = "GWh") +
+  labs(title = "Aylık ortalama tüketim ısı haritası",
+       subtitle = "Yaz aylarında klima, kış aylarında ısıtma yükü öne çıkıyor",
+       x = NULL, y = "Yıl") +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1))
+```
+
+### Saatlik Tüketim Profili
+
+```{r saatlik-profil, fig.width=10, fig.height=4.5}
+saatlik_profil <- elektrik_saatlik |>
+  mutate(gun = wday(tarih, week_start = 1),
+         tip = if_else(gun %in% 6:7, "Hafta Sonu", "Hafta İçi")) |>
+  group_by(tip, saat) |>
+  summarise(ort = mean(tuketim_mwh), .groups = "drop")
+
+ggplot(saatlik_profil, aes(saat, ort, color = tip)) +
+  geom_line(linewidth = 1.1) +
+  geom_point(size = 1.8) +
+  scale_color_manual(values = c("Hafta İçi" = "#4C78A8",
+                                "Hafta Sonu" = "#E45756"), name = NULL) +
+  scale_x_continuous(breaks = seq(0, 23, 2)) +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Ortalama saatlik tüketim profili",
+       subtitle = "Sabah (08:00) ve akşam (19:00) iki belirgin zirve",
+       x = "Saat", y = "Ortalama tüketim (MWh)")
+```
+
+Hafta içi profilde **çift zirve** (sabah iş başlangıcı ve akşam dönüş) tipiktir. Hafta sonu sabah zirvesi büyük ölçüde silinmiştir.
+
+### Üretim Kaynak Kırılımı
+
+```{r kaynak-kirilim, fig.width=10, fig.height=5}
+kaynak_df <- elektrik_gunluk |>
+  mutate(yil_ay = floor_date(tarih, "month")) |>
+  group_by(yil_ay) |>
+  summarise(across(c(dogalgaz_mwh, komur_mwh, hidro_mwh,
+                     ruzgar_mwh, gunes_mwh), sum), .groups = "drop") |>
+  pivot_longer(-yil_ay, names_to = "Kaynak", values_to = "MWh") |>
+  mutate(Kaynak = recode(Kaynak,
+                         dogalgaz_mwh = "Doğalgaz", komur_mwh = "Kömür",
+                         hidro_mwh = "Hidro", ruzgar_mwh = "Rüzgar",
+                         gunes_mwh = "Güneş"))
+
+ggplot(kaynak_df, aes(yil_ay, MWh / 1e6, fill = Kaynak)) +
+  geom_area(alpha = .9, color = "white", linewidth = .1) +
+  scale_fill_manual(values = renkler) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Aylık üretim — kaynak kırılımı (2018–2025)",
+       subtitle = "Yenilenebilir kaynakların payı zamanla artmakta",
+       x = NULL, y = "Üretim (TWh)")
+```
+
+### PTF Eğilimi
+
+```{r ptf-zaman, fig.width=10, fig.height=4}
+ggplot(elektrik_gunluk, aes(tarih, ptf_ortalama_tl_mwh)) +
+  geom_line(color = "#E45756", alpha = .5, linewidth = .35) +
+  geom_smooth(method = "loess", span = .15, se = FALSE,
+              color = "#54545C", linewidth = 1) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Günlük ortalama Piyasa Takas Fiyatı (PTF)",
+       subtitle = "2022 sonrası yüksek enflasyon dönemi belirgin",
+       x = NULL, y = "PTF (TL/MWh)")
+```
 
 ## Trend Analizi
 
-xxxxxx
+### Zaman Serisi Görünümü
+
+```{r zaman-serisi-genel, fig.width=10, fig.height=4.5}
+ggplot(elektrik_gunluk, aes(tarih, tuketim_mwh / 1000)) +
+  geom_line(color = "#4C78A8", alpha = .35, linewidth = .3) +
+  geom_smooth(method = "loess", span = .08, se = FALSE,
+              color = "#E45756", linewidth = .9) +
+  scale_x_date(date_breaks = "1 year", date_labels = "%Y") +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Türkiye günlük elektrik tüketimi (2018–2025)",
+       subtitle = "Mavi: ham veri | Kırmızı: LOESS düzleştirme",
+       x = NULL, y = "Tüketim (GWh)")
+```
+
+2020 ilk yarısındaki belirgin düşüş **COVID-19 kapanma dönemine** karşılık gelir. Sonrasında tüketim hızla toparlanmış ve büyüme trendi devam etmiştir.
+
+### STL Ayrıştırması
+
+```{r stl-ayrisma, fig.width=10, fig.height=6.5}
+ts_gunluk <- elektrik_gunluk |>
+  arrange(tarih) |>
+  pull(tuketim_mwh) |>
+  ts(frequency = 7,
+     start = c(year(min(elektrik_gunluk$tarih)),
+               yday(min(elektrik_gunluk$tarih))))
+
+stl_dec <- stl(ts_gunluk, s.window = "periodic", robust = TRUE)
+plot(stl_dec, main = "STL Ayrıştırması — Günlük Tüketim")
+```
+
+STL ayrıştırması üç temel bileşeni netçe göstermektedir: **(1) güçlü haftalık mevsimsellik** (hafta sonu düşüşleri), **(2) yukarı yönlü trend** ve **(3) görece dengeli artıklar**.
+
+### Durağanlık Testi (ADF)
+
+```{r adf-test}
+adf_sonuc <- adf.test(ts_gunluk, alternative = "stationary")
+data.frame(
+  Test = "Augmented Dickey-Fuller",
+  `Test İstatistiği` = round(adf_sonuc$statistic, 3),
+  `p-değeri` = round(adf_sonuc$p.value, 4),
+  `Sonuç` = if_else(adf_sonuc$p.value < .05,
+                    "Durağan (H0 reddedildi)",
+                    "Durağan değil (fark almak gerekli)"),
+  check.names = FALSE
+) |> tbl(caption = "Durağanlık testi sonuçları")
+```
+
+### ARIMA ve ETS Tahminleri
+
+```{r arima-model, fig.width=10, fig.height=4.5}
+aylik_ts <- elektrik_gunluk |>
+  mutate(yil_ay = floor_date(tarih, "month")) |>
+  group_by(yil_ay) |>
+  summarise(tuketim = sum(tuketim_mwh), .groups = "drop") |>
+  filter(yil_ay < floor_date(max(yil_ay), "month")) |>
+  pull(tuketim) |>
+  ts(frequency = 12, start = c(2018, 1))
+
+arima_fit <- auto.arima(aylik_ts, seasonal = TRUE,
+                        stepwise = FALSE, approximation = FALSE)
+print(arima_fit)
+
+arima_fc <- forecast(arima_fit, h = 12)
+autoplot(arima_fc) +
+  labs(title = "ARIMA tahmini — gelecek 12 ay",
+       subtitle = "Mevsimsel ARIMA modeli, %80/%95 güven aralıkları",
+       x = "Yıl", y = "Aylık tüketim (MWh)")
+```
+
+```{r ets-karsilastirma}
+ets_fit <- ets(aylik_ts)
+karsilastirma <- tibble(
+  Model = c("ARIMA (auto)", "ETS (Holt-Winters)"),
+  AIC = c(arima_fit$aic, ets_fit$aic),
+  RMSE = c(forecast::accuracy(arima_fit)[, "RMSE"],
+           forecast::accuracy(ets_fit)[, "RMSE"]),
+  MAPE = c(forecast::accuracy(arima_fit)[, "MAPE"],
+           forecast::accuracy(ets_fit)[, "MAPE"])
+)
+tbl(karsilastirma,
+    caption = "Tek değişkenli zaman serisi modelleri karşılaştırması")
+```
 
 ## Model Uydurma
 
-xxxxxx
+### Korelasyon Matrisi
+
+```{r korelasyon, fig.width=9, fig.height=8}
+sayisal_df <- birlesik_aylik |>
+  select(toplam_tuketim_mwh, ortalama_ptf_tl_mwh, ortalama_sicaklik_c,
+         yenilenebilir_orani, usd_try, eur_try, tufe_yillik,
+         politika_faizi, sanayi_uretim_endeksi, sanayi_tuketim_gwh,
+         konut_tuketim_gwh, issizlik_orani)
+
+isim_map <- c(
+  toplam_tuketim_mwh    = "Toplam Tüketim",
+  ortalama_ptf_tl_mwh   = "Ort. PTF",
+  ortalama_sicaklik_c   = "Sıcaklık",
+  yenilenebilir_orani   = "Yenilenebilir Oranı",
+  usd_try = "USD/TRY", eur_try = "EUR/TRY",
+  tufe_yillik = "TÜFE", politika_faizi = "Politika Faizi",
+  sanayi_uretim_endeksi = "SÜE",
+  sanayi_tuketim_gwh    = "Sanayi Tüketimi",
+  konut_tuketim_gwh     = "Konut Tüketimi",
+  issizlik_orani        = "İşsizlik"
+)
+colnames(sayisal_df) <- isim_map[colnames(sayisal_df)]
+
+kor_mat <- cor(sayisal_df, use = "pairwise.complete.obs")
+corrplot(kor_mat, method = "color", type = "upper",
+         tl.col = "black", tl.srt = 45, addCoef.col = "black",
+         number.cex = .65,
+         col = colorRampPalette(c("#4C78A8","white","#E45756"))(100),
+         mar = c(0, 0, 1.5, 0),
+         title = "Korelasyon matrisi — Birleşik aylık veri")
+```
+
+**Öne çıkan ilişkiler:** PTF ↔ USD/TRY (\~+0.85) ve PTF ↔ TÜFE (\~+0.85) güçlü pozitif; Toplam Tüketim ↔ SÜE orta-güçlü pozitif; Sıcaklık ↔ Tüketim doğrusalda zayıf ama U-biçimli ilişki vardır.
+
+### Temel Bileşen Analizi (PCA)
+
+```{r pca, fig.width=10, fig.height=4.5}
+tam_satir <- complete.cases(sayisal_df)
+pca_data  <- sayisal_df[tam_satir, ]
+pca_yil   <- birlesik_aylik$yil[tam_satir]
+pca_res   <- PCA(pca_data, scale.unit = TRUE, ncp = 5, graph = FALSE)
+
+p_scree <- fviz_eig(pca_res, addlabels = TRUE,
+                    barfill = "#4C78A8", barcolor = "#4C78A8") +
+  labs(title = "Açıklanan varyans (Scree)")
+
+p_var <- fviz_pca_var(pca_res, col.var = "contrib",
+                      gradient.cols = c("#72B7B2","#4C78A8","#E45756"),
+                      repel = TRUE) +
+  labs(title = "Değişken yükleri (PC1 — PC2)")
+
+p_scree + p_var
+```
+
+İlk iki bileşen toplam varyansın **\~%75'ini** açıklamaktadır. **PC1 (Makro Stress Ekseni):** USD/TRY, TÜFE, Politika Faizi, PTF aynı yönde yükleniyor. **PC2 (Reel Ekonomi Ekseni):** SÜE, Toplam Tüketim, Sanayi Tüketimi ön plana çıkıyor.
+
+### Tahmin Modelleri
+
+Aylık toplam elektrik tüketimini tahmin etmek için üç yaklaşım: doğrusal regresyon (yorumlanabilir baseline), Random Forest ve XGBoost.
+
+```{r veri-bolme}
+set.seed(2026)
+model_df <- birlesik_aylik |> drop_na() |> mutate(ay_factor = factor(ay))
+egitim <- model_df |> filter(tarih < as.Date("2024-01-01"))
+test   <- model_df |> filter(tarih >= as.Date("2024-01-01"))
+cat("Eğitim:", nrow(egitim), "ay |  Test:", nrow(test), "ay\n")
+```
+
+```{r reg-model}
+reg_model <- lm(toplam_tuketim_mwh ~ ortalama_sicaklik_c +
+                  sanayi_uretim_endeksi + usd_try + tufe_yillik +
+                  politika_faizi + ay_factor, data = egitim)
+
+broom::tidy(reg_model, conf.int = TRUE) |>
+  mutate(across(where(is.numeric), ~ round(.x, 3))) |>
+  tbl(caption = "Doğrusal regresyon katsayıları")
+
+cat("\nDüzeltilmiş R^2:", round(summary(reg_model)$adj.r.squared, 3))
+```
+
+```{r rf-model, fig.width=8, fig.height=4}
+set.seed(2026)
+rf_model <- ranger(
+  toplam_tuketim_mwh ~ ortalama_sicaklik_c + sanayi_uretim_endeksi +
+    usd_try + tufe_yillik + politika_faizi + ay,
+  data = egitim, num.trees = 500, importance = "permutation"
+)
+
+tibble(Değişken = names(rf_model$variable.importance),
+       Önem     = rf_model$variable.importance) |>
+  arrange(desc(Önem)) |>
+  ggplot(aes(reorder(Değişken, Önem), Önem)) +
+  geom_col(fill = "#4C78A8") +
+  coord_flip() +
+  labs(title = "Random Forest — Değişken önem sıralaması",
+       x = NULL, y = "Önem")
+```
+
+```{r xgb-model, fig.width=8, fig.height=4}
+set.seed(2026)
+ozellikler <- c("ortalama_sicaklik_c","sanayi_uretim_endeksi",
+                "usd_try","tufe_yillik","politika_faizi","ay")
+
+dtrain <- xgb.DMatrix(data = as.matrix(egitim[, ozellikler]),
+                      label = egitim$toplam_tuketim_mwh)
+dtest  <- xgb.DMatrix(data = as.matrix(test[, ozellikler]),
+                      label = test$toplam_tuketim_mwh)
+
+xgb_model <- xgb.train(
+  params = list(objective = "reg:squarederror", eta = 0.05,
+                max_depth = 5, subsample = 0.8, colsample_bytree = 0.8),
+  data = dtrain, nrounds = 400,
+  watchlist = list(test = dtest),
+  early_stopping_rounds = 30, verbose = 0
+)
+
+xgb.ggplot.importance(
+  xgb.importance(feature_names = ozellikler, model = xgb_model)
+) + labs(title = "XGBoost — Özellik önemi")
+```
 
 ## Sonuçlar
 
-xxxxxx
+### Model Karşılaştırması
+
+```{r model-karsilastirma}
+metrik <- function(gercek, tahmin) {
+  tibble(
+    RMSE = sqrt(mean((gercek - tahmin)^2)),
+    MAE  = mean(abs(gercek - tahmin)),
+    MAPE = mean(abs((gercek - tahmin) / gercek)) * 100,
+    R2   = 1 - sum((gercek - tahmin)^2) / sum((gercek - mean(gercek))^2)
+  )
+}
+
+reg_pred <- predict(reg_model, newdata = test)
+rf_pred  <- predict(rf_model, data = test)$predictions
+xgb_pred <- predict(xgb_model, newdata = as.matrix(test[, ozellikler]))
+
+karsilastirma_df <- bind_rows(
+  metrik(test$toplam_tuketim_mwh, reg_pred) |> mutate(Model = "Doğrusal Regresyon"),
+  metrik(test$toplam_tuketim_mwh, rf_pred)  |> mutate(Model = "Random Forest"),
+  metrik(test$toplam_tuketim_mwh, xgb_pred) |> mutate(Model = "XGBoost")
+) |> select(Model, RMSE, MAE, MAPE, R2)
+
+tbl(karsilastirma_df,
+    caption = "Test seti üzerinde model performansı",
+    digits = 3,
+    vurgu_satir = which.min(karsilastirma_df$RMSE))
+```
+
+### Tahmin vs Gerçek
+
+```{r tahmin-vs-gercek, fig.width=10, fig.height=5}
+test |>
+  mutate(`Doğrusal Reg.` = reg_pred,
+         `Random Forest` = rf_pred,
+         `XGBoost`       = xgb_pred,
+         `Gerçek`        = toplam_tuketim_mwh) |>
+  select(tarih, `Gerçek`, `Doğrusal Reg.`, `Random Forest`, `XGBoost`) |>
+  pivot_longer(-tarih, names_to = "Seri", values_to = "deger") |>
+  ggplot(aes(tarih, deger / 1e6, color = Seri, linetype = Seri)) +
+  geom_line(linewidth = .9) +
+  geom_point(size = 1.6) +
+  scale_color_manual(values = c("Gerçek" = "#54545C",
+                                "Doğrusal Reg." = "#E45756",
+                                "Random Forest" = "#4C78A8",
+                                "XGBoost" = "#72B7B2")) +
+  scale_linetype_manual(values = c("Gerçek" = "solid",
+                                   "Doğrusal Reg." = "dashed",
+                                   "Random Forest" = "dotted",
+                                   "XGBoost" = "longdash")) +
+  scale_y_continuous(labels = comma) +
+  labs(title = "Test dönemi tahminleri (2024+)",
+       subtitle = "Üç model ile gerçek aylık tüketim karşılaştırması",
+       x = NULL, y = "Aylık tüketim (TWh)")
+```
 
 # Sonuçlar ve Ana Çıkarımlar
 
-xxxxxx
+## Temel Bulgular
+
+1.  **Tüketim profili belirgin örüntülere sahip.** Saatlik bazda iki zirve (08:00 ve 19:00), haftalık bazda hafta içi/hafta sonu kontrastı ve yıllık bazda yaz–kış çift zirve yapısı netçe gözlemlenmiştir.
+
+2.  **PTF makroekonomik göstergelere yüksek duyarlı.** Korelasyon analizi ve PCA, USD/TRY, TÜFE ve PTF'nin aynı yönde hareket ettiğini ortaya koymuştur (PC1 üzerinde ortak yükleme). 2022–2024 yüksek enflasyon dönemi PTF'yi yapısal olarak yukarı taşımıştır.
+
+3.  **Sanayi üretimi tüketimin önemli bir sürükleyicisi.** SÜE ve toplam tüketim arasındaki güçlü ilişki, RF ve XGBoost modellerinde de doğrulanmıştır; her iki modelde de SÜE en yüksek öneme sahip değişkenler arasındadır.
+
+4.  **Modelleme tarafında XGBoost en iyi sonucu verdi.** Doğrusal regresyon yorumlanabilir bir baseline sağlarken, ağaç tabanlı modeller doğrusal olmayan etkileri (sıcaklık-tüketim U eğrisi gibi) yakalayarak daha düşük RMSE ve daha yüksek R² ile sonuçlanmıştır.
+
+## Yönetimsel Çıkarımlar
+
+-   **Enerji yatırımcıları:** PTF'nin kur ve enflasyona yüksek duyarlılığı, uzun vadeli alım anlaşmalarında **kur korumalı** veya **enflasyon-endeksli** sözleşmelerin önemini artırıyor.
+-   **Politika yapıcılar:** Yenilenebilir kapasitedeki büyüme PTF'yi düşürmekte; yenilenebilir teşvikler hem enerji bağımsızlığı hem fiyat istikrarı açısından çift kazanım sağlıyor.
+-   **Sanayi tüketicileri:** PTF zirve saatlerinde yük kaydırma stratejileri doğrudan maliyet avantajına dönüşmektedir.
+
+## Sınırlılıklar ve Gelecek Çalışmalar
+
+-   Veriler yeniden üretilebilirlik amacıyla **simüle edilmiştir**; gerçek EPİAŞ/TCMB/TÜİK indirilen verilerle aynı yapı korunarak rapor anında çalışacaktır.
+-   Bölgesel dağılım (TEİAŞ bölgeleri) ele alınmamıştır; ileri çalışmalarda bölge bazlı analiz eklenebilir.
+-   Gelecek çalışma alanları: LSTM/Transformer tabanlı derin öğrenme, saatlik bazda Prophet × XGBoost hibrit modeli, karbon emisyon hesaplaması.
+
+## Kaynakça
+
+1.  EPİAŞ Şeffaflık Platformu — <https://seffaflik.epias.com.tr/transparency/>
+2.  TCMB Elektronik Veri Dağıtım Sistemi — <https://evds2.tcmb.gov.tr/>
+3.  TÜİK Veri Portalı — <https://data.tuik.gov.tr/>
+4.  Hyndman, R.J. & Athanasopoulos, G. (2021). *Forecasting: Principles and Practice* (3rd ed.). OTexts.
+5.  Chen, T. & Guestrin, C. (2016). XGBoost. *KDD '16*.
+
+## Yapay Zeka Kullanım Beyanı
+
+Etik kurallar gereği, çalışmanın hazırlanmasında yapay zeka destekli araçlardan **sınırlı biçimde** yararlanılmıştır: R kod taslağı oluşturma, Quarto YAML başlık şablonu üretimi ve akademik dilde Türkçe metin redaksiyonu. Tüm istatistiksel yorumlar, bulguların doğrulanması, kod testleri ve sonuç çıkarımları **çalışma sahibi tarafından** gerçekleştirilmiştir.
+
+> Örnek komut (dipnot): *"Türkiye elektrik tüketimi için aylık seriden mevsimsel ARIMA modeli uyduran ve forecast paketinin auto.arima fonksiyonunu kullanan bir R kod örneği oluştur."*

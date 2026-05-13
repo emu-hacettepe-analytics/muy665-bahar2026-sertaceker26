@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr" xml:lang="tr"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Sertaç Eker">
 
-<title>Proje X (proje adını yazınız) – Sertaç EKER’in Analitik Labı</title>
+<title>Türkiye Elektrik Piyasası ve Makroekonomik Göstergelerin Bütünleşik Analizi – Sertaç EKER’in Analitik Labı</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -59,20 +95,24 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sonuç yok",
+    "search-matching-documents-text": "eşleşen belgeler",
+    "search-copy-link-title": "Aramak için bağlantıyı kopyalayın",
+    "search-hide-matches-text": "Ek eşleşmeleri gizle",
+    "search-more-match-text": "bu belgede bir tane daha eşleşme",
+    "search-more-matches-text": "bu belgede daha fazla eşleşme",
+    "search-clear-button-title": "Temizle",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "İptal et",
+    "search-submit-button-title": "Gönder",
+    "search-label": "Ara"
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
 
 
 <link rel="stylesheet" href="styles.css">
@@ -253,8 +293,8 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Sertaç EKER’in Analitik Labı</span>
     </a>
   </div>
-            <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Ara"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Gezinmeyi değiştir" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -292,7 +332,7 @@ ul.task-list li input[type="checkbox"] {
     <a href="https://github.com/sertaceker26" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
     <a href="https://twitter.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-twitter"></i></a>
     <a href="https://www.linkedin.com/in/sertaceker1998/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-linkedin"></i></a>
-  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Karanlık modu değiştir"><i class="bi"></i></a>
 </div>
       </div> <!-- /container-fluid -->
     </nav>
@@ -309,18 +349,52 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#veri" id="toc-veri" class="nav-link" data-scroll-target="#veri"><span class="header-section-number">2</span> Veri</a>
   <ul class="collapse">
   <li><a href="#veri-kaynağı" id="toc-veri-kaynağı" class="nav-link" data-scroll-target="#veri-kaynağı"><span class="header-section-number">2.1</span> Veri Kaynağı</a></li>
-  <li><a href="#veri-hakkında-genel-bilgiler" id="toc-veri-hakkında-genel-bilgiler" class="nav-link" data-scroll-target="#veri-hakkında-genel-bilgiler"><span class="header-section-number">2.2</span> Veri Hakkında Genel Bilgiler</a></li>
+  <li><a href="#veri-hakkında-genel-bilgiler" id="toc-veri-hakkında-genel-bilgiler" class="nav-link" data-scroll-target="#veri-hakkında-genel-bilgiler"><span class="header-section-number">2.2</span> Veri Hakkında Genel Bilgiler</a>
+  <ul class="collapse">
+  <li><a href="#veri-boyutları" id="toc-veri-boyutları" class="nav-link" data-scroll-target="#veri-boyutları"><span class="header-section-number">2.2.1</span> Veri Boyutları</a></li>
+  <li><a href="#özet-istatistikler" id="toc-özet-istatistikler" class="nav-link" data-scroll-target="#özet-istatistikler"><span class="header-section-number">2.2.2</span> Özet İstatistikler</a></li>
+  <li><a href="#eksik-veri-analizi" id="toc-eksik-veri-analizi" class="nav-link" data-scroll-target="#eksik-veri-analizi"><span class="header-section-number">2.2.3</span> Eksik Veri Analizi</a></li>
+  </ul></li>
   <li><a href="#tercih-sebebi" id="toc-tercih-sebebi" class="nav-link" data-scroll-target="#tercih-sebebi"><span class="header-section-number">2.3</span> Tercih Sebebi</a></li>
   <li><a href="#ön-işleme" id="toc-ön-işleme" class="nav-link" data-scroll-target="#ön-işleme"><span class="header-section-number">2.4</span> Ön İşleme</a></li>
   </ul></li>
   <li><a href="#analiz" id="toc-analiz" class="nav-link" data-scroll-target="#analiz"><span class="header-section-number">3</span> Analiz</a>
   <ul class="collapse">
-  <li><a href="#keşifsel-veri-analizi" id="toc-keşifsel-veri-analizi" class="nav-link" data-scroll-target="#keşifsel-veri-analizi"><span class="header-section-number">3.1</span> Keşifsel Veri Analizi</a></li>
-  <li><a href="#trend-analizi" id="toc-trend-analizi" class="nav-link" data-scroll-target="#trend-analizi"><span class="header-section-number">3.2</span> Trend Analizi</a></li>
-  <li><a href="#model-uydurma" id="toc-model-uydurma" class="nav-link" data-scroll-target="#model-uydurma"><span class="header-section-number">3.3</span> Model Uydurma</a></li>
-  <li><a href="#sonuçlar" id="toc-sonuçlar" class="nav-link" data-scroll-target="#sonuçlar"><span class="header-section-number">3.4</span> Sonuçlar</a></li>
+  <li><a href="#keşifsel-veri-analizi" id="toc-keşifsel-veri-analizi" class="nav-link" data-scroll-target="#keşifsel-veri-analizi"><span class="header-section-number">3.1</span> Keşifsel Veri Analizi</a>
+  <ul class="collapse">
+  <li><a href="#tüketim-dağılımı" id="toc-tüketim-dağılımı" class="nav-link" data-scroll-target="#tüketim-dağılımı"><span class="header-section-number">3.1.1</span> Tüketim Dağılımı</a></li>
+  <li><a href="#mevsimsellik-isı-haritası" id="toc-mevsimsellik-isı-haritası" class="nav-link" data-scroll-target="#mevsimsellik-isı-haritası"><span class="header-section-number">3.1.2</span> Mevsimsellik — Isı Haritası</a></li>
+  <li><a href="#saatlik-tüketim-profili" id="toc-saatlik-tüketim-profili" class="nav-link" data-scroll-target="#saatlik-tüketim-profili"><span class="header-section-number">3.1.3</span> Saatlik Tüketim Profili</a></li>
+  <li><a href="#üretim-kaynak-kırılımı" id="toc-üretim-kaynak-kırılımı" class="nav-link" data-scroll-target="#üretim-kaynak-kırılımı"><span class="header-section-number">3.1.4</span> Üretim Kaynak Kırılımı</a></li>
+  <li><a href="#ptf-eğilimi" id="toc-ptf-eğilimi" class="nav-link" data-scroll-target="#ptf-eğilimi"><span class="header-section-number">3.1.5</span> PTF Eğilimi</a></li>
   </ul></li>
-  <li><a href="#sonuçlar-ve-ana-çıkarımlar" id="toc-sonuçlar-ve-ana-çıkarımlar" class="nav-link" data-scroll-target="#sonuçlar-ve-ana-çıkarımlar"><span class="header-section-number">4</span> Sonuçlar ve Ana Çıkarımlar</a></li>
+  <li><a href="#trend-analizi" id="toc-trend-analizi" class="nav-link" data-scroll-target="#trend-analizi"><span class="header-section-number">3.2</span> Trend Analizi</a>
+  <ul class="collapse">
+  <li><a href="#zaman-serisi-görünümü" id="toc-zaman-serisi-görünümü" class="nav-link" data-scroll-target="#zaman-serisi-görünümü"><span class="header-section-number">3.2.1</span> Zaman Serisi Görünümü</a></li>
+  <li><a href="#stl-ayrıştırması" id="toc-stl-ayrıştırması" class="nav-link" data-scroll-target="#stl-ayrıştırması"><span class="header-section-number">3.2.2</span> STL Ayrıştırması</a></li>
+  <li><a href="#durağanlık-testi-adf" id="toc-durağanlık-testi-adf" class="nav-link" data-scroll-target="#durağanlık-testi-adf"><span class="header-section-number">3.2.3</span> Durağanlık Testi (ADF)</a></li>
+  <li><a href="#arima-ve-ets-tahminleri" id="toc-arima-ve-ets-tahminleri" class="nav-link" data-scroll-target="#arima-ve-ets-tahminleri"><span class="header-section-number">3.2.4</span> ARIMA ve ETS Tahminleri</a></li>
+  </ul></li>
+  <li><a href="#model-uydurma" id="toc-model-uydurma" class="nav-link" data-scroll-target="#model-uydurma"><span class="header-section-number">3.3</span> Model Uydurma</a>
+  <ul class="collapse">
+  <li><a href="#korelasyon-matrisi" id="toc-korelasyon-matrisi" class="nav-link" data-scroll-target="#korelasyon-matrisi"><span class="header-section-number">3.3.1</span> Korelasyon Matrisi</a></li>
+  <li><a href="#temel-bileşen-analizi-pca" id="toc-temel-bileşen-analizi-pca" class="nav-link" data-scroll-target="#temel-bileşen-analizi-pca"><span class="header-section-number">3.3.2</span> Temel Bileşen Analizi (PCA)</a></li>
+  <li><a href="#tahmin-modelleri" id="toc-tahmin-modelleri" class="nav-link" data-scroll-target="#tahmin-modelleri"><span class="header-section-number">3.3.3</span> Tahmin Modelleri</a></li>
+  </ul></li>
+  <li><a href="#sonuçlar" id="toc-sonuçlar" class="nav-link" data-scroll-target="#sonuçlar"><span class="header-section-number">3.4</span> Sonuçlar</a>
+  <ul class="collapse">
+  <li><a href="#model-karşılaştırması" id="toc-model-karşılaştırması" class="nav-link" data-scroll-target="#model-karşılaştırması"><span class="header-section-number">3.4.1</span> Model Karşılaştırması</a></li>
+  <li><a href="#tahmin-vs-gerçek" id="toc-tahmin-vs-gerçek" class="nav-link" data-scroll-target="#tahmin-vs-gerçek"><span class="header-section-number">3.4.2</span> Tahmin vs Gerçek</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sonuçlar-ve-ana-çıkarımlar" id="toc-sonuçlar-ve-ana-çıkarımlar" class="nav-link" data-scroll-target="#sonuçlar-ve-ana-çıkarımlar"><span class="header-section-number">4</span> Sonuçlar ve Ana Çıkarımlar</a>
+  <ul class="collapse">
+  <li><a href="#temel-bulgular" id="toc-temel-bulgular" class="nav-link" data-scroll-target="#temel-bulgular"><span class="header-section-number">4.1</span> Temel Bulgular</a></li>
+  <li><a href="#yönetimsel-çıkarımlar" id="toc-yönetimsel-çıkarımlar" class="nav-link" data-scroll-target="#yönetimsel-çıkarımlar"><span class="header-section-number">4.2</span> Yönetimsel Çıkarımlar</a></li>
+  <li><a href="#sınırlılıklar-ve-gelecek-çalışmalar" id="toc-sınırlılıklar-ve-gelecek-çalışmalar" class="nav-link" data-scroll-target="#sınırlılıklar-ve-gelecek-çalışmalar"><span class="header-section-number">4.3</span> Sınırlılıklar ve Gelecek Çalışmalar</a></li>
+  <li><a href="#kaynakça" id="toc-kaynakça" class="nav-link" data-scroll-target="#kaynakça"><span class="header-section-number">4.4</span> Kaynakça</a></li>
+  <li><a href="#yapay-zeka-kullanım-beyanı" id="toc-yapay-zeka-kullanım-beyanı" class="nav-link" data-scroll-target="#yapay-zeka-kullanım-beyanı"><span class="header-section-number">4.5</span> Yapay Zeka Kullanım Beyanı</a></li>
+  </ul></li>
   </ul>
 </nav>
 </nav>
@@ -334,14 +408,27 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Proje X (proje adını yazınız)</h1>
+<h1 class="title">Türkiye Elektrik Piyasası ve Makroekonomik Göstergelerin Bütünleşik Analizi</h1>
+<p class="subtitle lead">EPİAŞ × TCMB × TÜİK Verileriyle Kapsamlı Bir Veri Bilimi Çalışması</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Yazar</div>
+    <div class="quarto-title-meta-contents">
+             <p>Sertaç Eker </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Yayınlanma Tarihi</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">13 Mayıs 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -351,60 +438,1079 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p><strong>Projemizle ilgili güncellemelerden haberdar olmak için bu xxxxx bağlantısındaki proje sayfamızı takip edin.</strong></p>
-<p>(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)</p>
+<p><strong>Projemizle ilgili güncellemelerden haberdar olmak için bu sayfayı takip edin.</strong></p>
 <section id="proje-genel-bakış-ve-kapsamı" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Proje Genel Bakış ve Kapsamı</h1>
-<p>xxxxxx</p>
+<p>Türkiye, dünyanın en büyük 20. elektrik tüketicisi olup, elektrik piyasası ekonominin tüm sektörleri için kritik bir altyapı oluşturmaktadır. Son 10 yılda elektrik talebi yıllık ortalama %3-4 büyürken, kur ve enflasyon kaynaklı maliyet baskısı Piyasa Takas Fiyatı’nı (PTF) 2018’den 2024’e kadar nominal olarak yaklaşık <strong>8 kat</strong> artırmıştır.</p>
+<p>Bu projede, üç farklı resmî kaynaktan elde edilen verileri birleştirerek elektrik tüketiminin ve fiyatlarının makroekonomik göstergelerle ilişkisi incelenmektedir:</p>
+<ul>
+<li><strong>EPİAŞ Şeffaflık Platformu</strong> — saatlik tüketim, üretim, kaynak kırılımı, PTF</li>
+<li><strong>TCMB EVDS</strong> — döviz kuru, enflasyon, politika faizi</li>
+<li><strong>TÜİK</strong> — sanayi üretim endeksi, sektörel elektrik tüketimi, demografi</li>
+</ul>
+<p>Çalışmanın temel araştırma soruları şunlardır:</p>
+<ol type="1">
+<li><strong>Tüketim profili nasıl değişiyor?</strong> Saatlik, haftalık ve mevsimsel örüntüler ne kadar belirgin?</li>
+<li><strong>Hangi makro değişkenler PTF’yi sürüklüyor?</strong> Kur, enflasyon, faiz arasındaki ilişki nasıl?</li>
+<li><strong>Sanayi üretimi elektrik tüketimini ne kadar açıklıyor?</strong> TÜİK Sanayi Üretim Endeksi (SÜE) ile sektörel tüketim ne kadar uyumlu?</li>
+<li><strong>En iyi tahmin modeli hangisi?</strong> ARIMA / ETS gibi klasik istatistiksel yöntemler ile Random Forest / XGBoost gibi makine öğrenmesi modellerinin performansı nasıl karşılaştırılır?</li>
+</ol>
+<blockquote class="blockquote">
+<p><strong>Yeniden üretilebilirlik:</strong> Tüm analizler <code>set.seed(2026)</code> ile sabitlenmiştir. Veri üretimi <code>R/01_simulate_data.R</code>, paket kurulumu <code>R/02_paketler.R</code> scriptleriyle belgelenmiştir.</p>
+</blockquote>
 </section>
 <section id="veri" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Veri</h1>
-<p>xxxxxx</p>
 <section id="veri-kaynağı" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="veri-kaynağı"><span class="header-section-number">2.1</span> Veri Kaynağı</h2>
-<p>xxxxxx</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small">
+<caption>Kullanılan veri kaynakları</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Kaynak</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">URL</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Frekans</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Anahtar Değişkenler</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">EPİAŞ Şeffaflık</td>
+<td style="text-align: left;">seffaflik.epias.com.tr</td>
+<td style="text-align: left;">Saatlik / Günlük</td>
+<td style="text-align: left;">Tüketim, Üretim, PTF, Kaynak kırılımı</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">TCMB EVDS</td>
+<td style="text-align: left;">evds2.tcmb.gov.tr</td>
+<td style="text-align: left;">Aylık</td>
+<td style="text-align: left;">USD/TRY, EUR/TRY, TÜFE, Politika Faizi</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">TÜİK</td>
+<td style="text-align: left;">data.tuik.gov.tr</td>
+<td style="text-align: left;">Aylık</td>
+<td style="text-align: left;">Sanayi Üretim Endeksi, Sektörel Tüketim, Nüfus</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>EPİAŞ Şeffaflık, TCMB EVDS ve TÜİK API’leri kullanıcı kaydı ve API anahtarı gerektirmektedir. Bu nedenle proje, Türkiye’nin gerçek elektrik ve makroekonomik dinamiklerine sadık kalınarak <code>set.seed(2026)</code> ile <strong>yeniden üretilebilir biçimde simüle edilmiş</strong> veri seti üzerinden çalışmaktadır. <code>data/README.md</code> dosyasındaki kolon şeması korunarak gerçek CSV’lerle değiştirildiğinde rapor kod değişikliği gerektirmeden yeniden render edilebilir.</p>
 </section>
 <section id="veri-hakkında-genel-bilgiler" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="veri-hakkında-genel-bilgiler"><span class="header-section-number">2.2</span> Veri Hakkında Genel Bilgiler</h2>
-<p>xxxxxx</p>
+<section id="veri-boyutları" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="veri-boyutları"><span class="header-section-number">2.2.1</span> Veri Boyutları</h3>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small">
+<caption>Veri seti boyutları</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Veri Seti</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Gözlem</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Değişken</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Başlangıç</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Bitiş</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Saatlik elektrik (EPİAŞ)</td>
+<td style="text-align: right;">17544</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">2022-12-31</td>
+<td style="text-align: left;">2024-12-31</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Günlük elektrik</td>
+<td style="text-align: right;">2677</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">2018-01-01</td>
+<td style="text-align: left;">2025-04-30</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Aylık TCMB</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">2018-01-01</td>
+<td style="text-align: left;">2025-04-01</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Aylık TÜİK</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">2018-01-01</td>
+<td style="text-align: left;">2025-04-01</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Birleşik aylık</td>
+<td style="text-align: right;">88</td>
+<td style="text-align: right;">21</td>
+<td style="text-align: left;">2018-01-01</td>
+<td style="text-align: left;">2025-04-01</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="özet-istatistikler" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="özet-istatistikler"><span class="header-section-number">2.2.2</span> Özet İstatistikler</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>elektrik_gunluk <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(tuketim_mwh, uretim_mwh, ptf_ortalama_tl_mwh, ortalama_sicaklik_c) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">skim</span>() <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">yank</span>(<span class="st">"numeric"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(skim_variable, mean, sd, p0, p50, p100) <span class="sc">|&gt;</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(Değişken <span class="ot">=</span> skim_variable, <span class="at">Ortalama =</span> mean, <span class="st">`</span><span class="at">Std. Sapma</span><span class="st">`</span> <span class="ot">=</span> sd,</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>         <span class="at">Min =</span> p0, <span class="at">Medyan =</span> p50, <span class="at">Maks =</span> p100) <span class="sc">|&gt;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl</span>(<span class="at">caption =</span> <span class="st">"Günlük elektrik verilerinin temel istatistikleri"</span>, <span class="at">digits =</span> <span class="dv">0</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small">
+<caption>Günlük elektrik verilerinin temel istatistikleri</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Değişken</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Ortalama</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Std. Sapma</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Min</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Medyan</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Maks</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">tuketim_mwh</td>
+<td style="text-align: right;">851800</td>
+<td style="text-align: right;">121419</td>
+<td style="text-align: right;">488131</td>
+<td style="text-align: right;">853266</td>
+<td style="text-align: right;">1119478</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">uretim_mwh</td>
+<td style="text-align: right;">877354</td>
+<td style="text-align: right;">125062</td>
+<td style="text-align: right;">502775</td>
+<td style="text-align: right;">878864</td>
+<td style="text-align: right;">1153062</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ptf_ortalama_tl_mwh</td>
+<td style="text-align: right;">1873</td>
+<td style="text-align: right;">335</td>
+<td style="text-align: right;">952</td>
+<td style="text-align: right;">1860</td>
+<td style="text-align: right;">3006</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ortalama_sicaklik_c</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">9</td>
+<td style="text-align: right;">-4</td>
+<td style="text-align: right;">15</td>
+<td style="text-align: right;">35</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="eksik-veri-analizi" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="eksik-veri-analizi"><span class="header-section-number">2.2.3</span> Eksik Veri Analizi</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>eksik_df <span class="ot">&lt;-</span> elektrik_gunluk <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.)))) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>(), <span class="at">names_to =</span> <span class="st">"Değişken"</span>, <span class="at">values_to =</span> <span class="st">"Eksik"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(eksik_df, <span class="fu">aes</span>(<span class="fu">reorder</span>(Değişken, Eksik), Eksik)) <span class="sc">+</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#4C78A8"</span>) <span class="sc">+</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Eksik gözlem sayısı (günlük elektrik veri seti)"</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Eksik değer"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/eksik-veri-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="990"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Tüm değişkenlerde eksik değer <strong>bulunmamaktadır</strong>; veri analize hazırdır.</p>
+</section>
 </section>
 <section id="tercih-sebebi" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="tercih-sebebi"><span class="header-section-number">2.3</span> Tercih Sebebi</h2>
-<p>xxxxxx</p>
+<p>Elektrik piyasası, Türkiye’de hem <strong>arz-talep dinamikleri</strong> hem de <strong>makroekonomik göstergelere bağımlılığı</strong> ile öne çıkan kritik bir sektördür. Bu üç veri kaynağı birlikte kullanıldığında şu zenginlik elde edilir:</p>
+<ul>
+<li><strong>EPİAŞ</strong> mikro seviyede (saatlik) talep ve fiyat dinamiklerini sunar.</li>
+<li><strong>TCMB</strong> makro çerçeveyi (kur, enflasyon, faiz) sağlar — elektrik maliyetinin önemli sürükleyicileridir.</li>
+<li><strong>TÜİK</strong> reel ekonomi (sanayi üretimi, demografi) ile bağlantı kurar.</li>
+</ul>
+<p>Üç kaynağı birleştirmek, elektrik tüketim ve fiyatlarını yalnızca mevsimsel/hava koşullarıyla değil; <strong>kur şokları, enflasyon ve sanayi üretim çevrimleri</strong> ile birlikte modellememizi sağlar — ki bu, gerçek karar süreçlerinde kullanılan analitik çerçeveye en yakın yaklaşımdır.</p>
 </section>
 <section id="ön-işleme" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="ön-işleme"><span class="header-section-number">2.4</span> Ön İşleme</h2>
-<p>xxxxxx</p>
+<p>Veriler <code>readr::read_csv</code> ile yüklenmiş, tarih sütunları <code>lubridate</code> ile dönüştürülmüş, kategorik değişkenler faktöre çevrilmiştir. Saatlik, günlük ve aylık olmak üzere üç farklı zaman frekansı korunmuş; korelasyon ve modelleme aşamasında üç kaynak <code>tarih</code> anahtarıyla aylık seviyede birleştirilerek <code>birlestirilmis_aylik.csv</code> üretilmiştir.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>elektrik_gunluk <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/elektrik_gunluk.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">tarih =</span> <span class="fu">as.Date</span>(tarih),</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">gun_haftasi =</span> <span class="fu">factor</span>(gun_haftasi, <span class="at">levels =</span> günler))</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Veri tipleri, eksik değerler ve aykırı gözlemler EDA aşamasında kontrol edilmiştir.</p>
 </section>
 </section>
 <section id="analiz" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Analiz</h1>
-<p>xxxxxx</p>
 <section id="keşifsel-veri-analizi" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="keşifsel-veri-analizi"><span class="header-section-number">3.1</span> Keşifsel Veri Analizi</h2>
-<p>xxxxxx</p>
+<section id="tüketim-dağılımı" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="tüketim-dağılımı"><span class="header-section-number">3.1.1</span> Tüketim Dağılımı</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elektrik_gunluk, <span class="fu">aes</span>(tuketim_mwh <span class="sc">/</span> <span class="dv">1000</span>)) <span class="sc">+</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">fill =</span> <span class="st">"#4C78A8"</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">alpha =</span> .<span class="dv">9</span>) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="fu">aes</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(tuketim_mwh <span class="sc">/</span> <span class="dv">1000</span>)),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">color =</span> <span class="st">"#E45756"</span>, <span class="at">linetype =</span> <span class="st">"dashed"</span>, <span class="at">linewidth =</span> .<span class="dv">8</span>) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Günlük tüketim dağılımı"</span>,</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Kırmızı çizgi: ortalama"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Tüketim (GWh)"</span>, <span class="at">y =</span> <span class="st">"Frekans"</span>) <span class="sc">+</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> comma)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(elektrik_gunluk, <span class="fu">aes</span>(<span class="at">y =</span> tuketim_mwh <span class="sc">/</span> <span class="dv">1000</span>, <span class="at">x =</span> <span class="fu">factor</span>(yil))) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"#72B7B2"</span>, <span class="at">outlier.alpha =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Yıllara göre tüketim"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Yıl"</span>, <span class="at">y =</span> <span class="st">"Tüketim (GWh)"</span>) <span class="sc">+</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> comma)</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>p1 <span class="sc">+</span> p2</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/tuketim-dagilim-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1100"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Günlük tüketim <strong>çift modlu</strong> bir dağılım sergilemektedir — bu, hafta içi/hafta sonu ile yaz/kış mevsimsel ayrımının izidir. Yıllık eğilim istikrarlı bir büyüme göstermektedir.</p>
+</section>
+<section id="mevsimsellik-isı-haritası" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="mevsimsellik-isı-haritası"><span class="header-section-number">3.1.2</span> Mevsimsellik — Isı Haritası</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tr_ay <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Ocak"</span>,<span class="st">"Şubat"</span>,<span class="st">"Mart"</span>,<span class="st">"Nisan"</span>,<span class="st">"Mayıs"</span>,<span class="st">"Haziran"</span>,</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>           <span class="st">"Temmuz"</span>,<span class="st">"Ağustos"</span>,<span class="st">"Eylül"</span>,<span class="st">"Ekim"</span>,<span class="st">"Kasım"</span>,<span class="st">"Aralık"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>heatmap_df <span class="ot">&lt;-</span> elektrik_gunluk <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yil =</span> <span class="fu">year</span>(tarih),</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">ay  =</span> <span class="fu">factor</span>(tr_ay[<span class="fu">month</span>(tarih)], <span class="at">levels =</span> tr_ay)) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(yil, ay) <span class="sc">|&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ort_tuketim =</span> <span class="fu">mean</span>(tuketim_mwh) <span class="sc">/</span> <span class="dv">1000</span>, <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(heatmap_df, <span class="fu">aes</span>(ay, <span class="fu">factor</span>(yil), <span class="at">fill =</span> ort_tuketim)) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_tile</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">linewidth =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_viridis_c</span>(<span class="at">option =</span> <span class="st">"C"</span>, <span class="at">labels =</span> comma, <span class="at">name =</span> <span class="st">"GWh"</span>) <span class="sc">+</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Aylık ortalama tüketim ısı haritası"</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Yaz aylarında klima, kış aylarında ısıtma yükü öne çıkıyor"</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Yıl"</span>) <span class="sc">+</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">30</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/heatmap-mevsim-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1100"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="saatlik-tüketim-profili" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="saatlik-tüketim-profili"><span class="header-section-number">3.1.3</span> Saatlik Tüketim Profili</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>saatlik_profil <span class="ot">&lt;-</span> elektrik_saatlik <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gun =</span> <span class="fu">wday</span>(tarih, <span class="at">week_start =</span> <span class="dv">1</span>),</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">tip =</span> <span class="fu">if_else</span>(gun <span class="sc">%in%</span> <span class="dv">6</span><span class="sc">:</span><span class="dv">7</span>, <span class="st">"Hafta Sonu"</span>, <span class="st">"Hafta İçi"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(tip, saat) <span class="sc">|&gt;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ort =</span> <span class="fu">mean</span>(tuketim_mwh), <span class="at">.groups =</span> <span class="st">"drop"</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(saatlik_profil, <span class="fu">aes</span>(saat, ort, <span class="at">color =</span> tip)) <span class="sc">+</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.8</span>) <span class="sc">+</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Hafta İçi"</span> <span class="ot">=</span> <span class="st">"#4C78A8"</span>,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Hafta Sonu"</span> <span class="ot">=</span> <span class="st">"#E45756"</span>), <span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">23</span>, <span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> comma) <span class="sc">+</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Ortalama saatlik tüketim profili"</span>,</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Sabah (08:00) ve akşam (19:00) iki belirgin zirve"</span>,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Saat"</span>, <span class="at">y =</span> <span class="st">"Ortalama tüketim (MWh)"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/saatlik-profil-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1100"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Hafta içi profilde <strong>çift zirve</strong> (sabah iş başlangıcı ve akşam dönüş) tipiktir. Hafta sonu sabah zirvesi büyük ölçüde silinmiştir.</p>
+</section>
+<section id="üretim-kaynak-kırılımı" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="üretim-kaynak-kırılımı"><span class="header-section-number">3.1.4</span> Üretim Kaynak Kırılımı</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>kaynak_df <span class="ot">&lt;-</span> elektrik_gunluk <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yil_ay =</span> <span class="fu">floor_date</span>(tarih, <span class="st">"month"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(yil_ay) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">c</span>(dogalgaz_mwh, komur_mwh, hidro_mwh,</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>                     ruzgar_mwh, gunes_mwh), sum), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>yil_ay, <span class="at">names_to =</span> <span class="st">"Kaynak"</span>, <span class="at">values_to =</span> <span class="st">"MWh"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Kaynak =</span> <span class="fu">recode</span>(Kaynak,</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>                         <span class="at">dogalgaz_mwh =</span> <span class="st">"Doğalgaz"</span>, <span class="at">komur_mwh =</span> <span class="st">"Kömür"</span>,</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>                         <span class="at">hidro_mwh =</span> <span class="st">"Hidro"</span>, <span class="at">ruzgar_mwh =</span> <span class="st">"Rüzgar"</span>,</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>                         <span class="at">gunes_mwh =</span> <span class="st">"Güneş"</span>))</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(kaynak_df, <span class="fu">aes</span>(yil_ay, MWh <span class="sc">/</span> <span class="fl">1e6</span>, <span class="at">fill =</span> Kaynak)) <span class="sc">+</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_area</span>(<span class="at">alpha =</span> .<span class="dv">9</span>, <span class="at">color =</span> <span class="st">"white"</span>, <span class="at">linewidth =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> renkler) <span class="sc">+</span></span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span></span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> comma) <span class="sc">+</span></span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Aylık üretim — kaynak kırılımı (2018–2025)"</span>,</span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Yenilenebilir kaynakların payı zamanla artmakta"</span>,</span>
+<span id="cb7-19"><a href="#cb7-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Üretim (TWh)"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/kaynak-kirilim-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1100"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ptf-eğilimi" class="level3" data-number="3.1.5">
+<h3 data-number="3.1.5" class="anchored" data-anchor-id="ptf-eğilimi"><span class="header-section-number">3.1.5</span> PTF Eğilimi</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elektrik_gunluk, <span class="fu">aes</span>(tarih, ptf_ortalama_tl_mwh)) <span class="sc">+</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#E45756"</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">linewidth =</span> .<span class="dv">35</span>) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">span =</span> .<span class="dv">15</span>, <span class="at">se =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#54545C"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> comma) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Günlük ortalama Piyasa Takas Fiyatı (PTF)"</span>,</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"2022 sonrası yüksek enflasyon dönemi belirgin"</span>,</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"PTF (TL/MWh)"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/ptf-zaman-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1100"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="trend-analizi" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="trend-analizi"><span class="header-section-number">3.2</span> Trend Analizi</h2>
-<p>xxxxxx</p>
+<section id="zaman-serisi-görünümü" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="zaman-serisi-görünümü"><span class="header-section-number">3.2.1</span> Zaman Serisi Görünümü</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(elektrik_gunluk, <span class="fu">aes</span>(tarih, tuketim_mwh <span class="sc">/</span> <span class="dv">1000</span>)) <span class="sc">+</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"#4C78A8"</span>, <span class="at">alpha =</span> .<span class="dv">35</span>, <span class="at">linewidth =</span> .<span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">span =</span> .<span class="dv">08</span>, <span class="at">se =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>              <span class="at">color =</span> <span class="st">"#E45756"</span>, <span class="at">linewidth =</span> .<span class="dv">9</span>) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_date</span>(<span class="at">date_breaks =</span> <span class="st">"1 year"</span>, <span class="at">date_labels =</span> <span class="st">"%Y"</span>) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> comma) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Türkiye günlük elektrik tüketimi (2018–2025)"</span>,</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Mavi: ham veri | Kırmızı: LOESS düzleştirme"</span>,</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Tüketim (GWh)"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/zaman-serisi-genel-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1100"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>2020 ilk yarısındaki belirgin düşüş <strong>COVID-19 kapanma dönemine</strong> karşılık gelir. Sonrasında tüketim hızla toparlanmış ve büyüme trendi devam etmiştir.</p>
+</section>
+<section id="stl-ayrıştırması" class="level3" data-number="3.2.2">
+<h3 data-number="3.2.2" class="anchored" data-anchor-id="stl-ayrıştırması"><span class="header-section-number">3.2.2</span> STL Ayrıştırması</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>ts_gunluk <span class="ot">&lt;-</span> elektrik_gunluk <span class="sc">|&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(tarih) <span class="sc">|&gt;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(tuketim_mwh) <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ts</span>(<span class="at">frequency =</span> <span class="dv">7</span>,</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">start =</span> <span class="fu">c</span>(<span class="fu">year</span>(<span class="fu">min</span>(elektrik_gunluk<span class="sc">$</span>tarih)),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>               <span class="fu">yday</span>(<span class="fu">min</span>(elektrik_gunluk<span class="sc">$</span>tarih))))</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>stl_dec <span class="ot">&lt;-</span> <span class="fu">stl</span>(ts_gunluk, <span class="at">s.window =</span> <span class="st">"periodic"</span>, <span class="at">robust =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(stl_dec, <span class="at">main =</span> <span class="st">"STL Ayrıştırması — Günlük Tüketim"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/stl-ayrisma-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1100"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>STL ayrıştırması üç temel bileşeni netçe göstermektedir: <strong>(1) güçlü haftalık mevsimsellik</strong> (hafta sonu düşüşleri), <strong>(2) yukarı yönlü trend</strong> ve <strong>(3) görece dengeli artıklar</strong>.</p>
+</section>
+<section id="durağanlık-testi-adf" class="level3" data-number="3.2.3">
+<h3 data-number="3.2.3" class="anchored" data-anchor-id="durağanlık-testi-adf"><span class="header-section-number">3.2.3</span> Durağanlık Testi (ADF)</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>adf_sonuc <span class="ot">&lt;-</span> <span class="fu">adf.test</span>(ts_gunluk, <span class="at">alternative =</span> <span class="st">"stationary"</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Test =</span> <span class="st">"Augmented Dickey-Fuller"</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Test İstatistiği</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(adf_sonuc<span class="sc">$</span>statistic, <span class="dv">3</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">p-değeri</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">round</span>(adf_sonuc<span class="sc">$</span>p.value, <span class="dv">4</span>),</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>  <span class="st">`</span><span class="at">Sonuç</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">if_else</span>(adf_sonuc<span class="sc">$</span>p.value <span class="sc">&lt;</span> .<span class="dv">05</span>,</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Durağan (H0 reddedildi)"</span>,</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>                    <span class="st">"Durağan değil (fark almak gerekli)"</span>),</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">tbl</span>(<span class="at">caption =</span> <span class="st">"Durağanlık testi sonuçları"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small">
+<caption>Durağanlık testi sonuçları</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th"></th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Test</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">Test İstatistiği</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p-değeri</th>
+<th style="text-align: left;" data-quarto-table-cell-role="th">Sonuç</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Dickey-Fuller</td>
+<td style="text-align: left;">Augmented Dickey-Fuller</td>
+<td style="text-align: right;">-1.6</td>
+<td style="text-align: right;">0.75</td>
+<td style="text-align: left;">Durağan değil (fark almak gerekli)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="arima-ve-ets-tahminleri" class="level3" data-number="3.2.4">
+<h3 data-number="3.2.4" class="anchored" data-anchor-id="arima-ve-ets-tahminleri"><span class="header-section-number">3.2.4</span> ARIMA ve ETS Tahminleri</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>aylik_ts <span class="ot">&lt;-</span> elektrik_gunluk <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">yil_ay =</span> <span class="fu">floor_date</span>(tarih, <span class="st">"month"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(yil_ay) <span class="sc">|&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">tuketim =</span> <span class="fu">sum</span>(tuketim_mwh), <span class="at">.groups =</span> <span class="st">"drop"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(yil_ay <span class="sc">&lt;</span> <span class="fu">floor_date</span>(<span class="fu">max</span>(yil_ay), <span class="st">"month"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(tuketim) <span class="sc">|&gt;</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ts</span>(<span class="at">frequency =</span> <span class="dv">12</span>, <span class="at">start =</span> <span class="fu">c</span>(<span class="dv">2018</span>, <span class="dv">1</span>))</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>arima_fit <span class="ot">&lt;-</span> <span class="fu">auto.arima</span>(aylik_ts, <span class="at">seasonal =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>                        <span class="at">stepwise =</span> <span class="cn">FALSE</span>, <span class="at">approximation =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(arima_fit)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Series: aylik_ts 
+ARIMA(2,0,0)(2,1,0)[12] with drift 
+
+Coefficients:
+         ar1      ar2     sar1     sar2      drift
+      0.8459  -0.2932  -0.6419  -0.4019  49801.130
+s.e.  0.1106   0.1094   0.1144   0.1273   6240.859
+
+sigma^2 = 2.939e+11:  log likelihood = -1097.96
+AIC=2207.92   AICc=2209.15   BIC=2221.82</code></pre>
+</div>
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>arima_fc <span class="ot">&lt;-</span> <span class="fu">forecast</span>(arima_fit, <span class="at">h =</span> <span class="dv">12</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">autoplot</span>(arima_fc) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"ARIMA tahmini — gelecek 12 ay"</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Mevsimsel ARIMA modeli, %80/%95 güven aralıkları"</span>,</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Yıl"</span>, <span class="at">y =</span> <span class="st">"Aylık tüketim (MWh)"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/arima-model-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1100"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ets_fit <span class="ot">&lt;-</span> <span class="fu">ets</span>(aylik_ts)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>karsilastirma <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Model =</span> <span class="fu">c</span>(<span class="st">"ARIMA (auto)"</span>, <span class="st">"ETS (Holt-Winters)"</span>),</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">AIC =</span> <span class="fu">c</span>(arima_fit<span class="sc">$</span>aic, ets_fit<span class="sc">$</span>aic),</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">RMSE =</span> <span class="fu">c</span>(forecast<span class="sc">::</span><span class="fu">accuracy</span>(arima_fit)[, <span class="st">"RMSE"</span>],</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>           forecast<span class="sc">::</span><span class="fu">accuracy</span>(ets_fit)[, <span class="st">"RMSE"</span>]),</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">MAPE =</span> <span class="fu">c</span>(forecast<span class="sc">::</span><span class="fu">accuracy</span>(arima_fit)[, <span class="st">"MAPE"</span>],</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>           forecast<span class="sc">::</span><span class="fu">accuracy</span>(ets_fit)[, <span class="st">"MAPE"</span>])</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl</span>(karsilastirma,</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Tek değişkenli zaman serisi modelleri karşılaştırması"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small">
+<caption>Tek değişkenli zaman serisi modelleri karşılaştırması</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">AIC</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">RMSE</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">MAPE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">ARIMA (auto)</td>
+<td style="text-align: right;">2207.92</td>
+<td style="text-align: right;">486277.3</td>
+<td style="text-align: right;">1.33</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ETS (Holt-Winters)</td>
+<td style="text-align: right;">2694.86</td>
+<td style="text-align: right;">469470.1</td>
+<td style="text-align: right;">1.28</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
 </section>
 <section id="model-uydurma" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="model-uydurma"><span class="header-section-number">3.3</span> Model Uydurma</h2>
-<p>xxxxxx</p>
+<section id="korelasyon-matrisi" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="korelasyon-matrisi"><span class="header-section-number">3.3.1</span> Korelasyon Matrisi</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sayisal_df <span class="ot">&lt;-</span> birlesik_aylik <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(toplam_tuketim_mwh, ortalama_ptf_tl_mwh, ortalama_sicaklik_c,</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>         yenilenebilir_orani, usd_try, eur_try, tufe_yillik,</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>         politika_faizi, sanayi_uretim_endeksi, sanayi_tuketim_gwh,</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>         konut_tuketim_gwh, issizlik_orani)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>isim_map <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">toplam_tuketim_mwh    =</span> <span class="st">"Toplam Tüketim"</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">ortalama_ptf_tl_mwh   =</span> <span class="st">"Ort. PTF"</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">ortalama_sicaklik_c   =</span> <span class="st">"Sıcaklık"</span>,</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">yenilenebilir_orani   =</span> <span class="st">"Yenilenebilir Oranı"</span>,</span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">usd_try =</span> <span class="st">"USD/TRY"</span>, <span class="at">eur_try =</span> <span class="st">"EUR/TRY"</span>,</span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">tufe_yillik =</span> <span class="st">"TÜFE"</span>, <span class="at">politika_faizi =</span> <span class="st">"Politika Faizi"</span>,</span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">sanayi_uretim_endeksi =</span> <span class="st">"SÜE"</span>,</span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">sanayi_tuketim_gwh    =</span> <span class="st">"Sanayi Tüketimi"</span>,</span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">konut_tuketim_gwh     =</span> <span class="st">"Konut Tüketimi"</span>,</span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">issizlik_orani        =</span> <span class="st">"İşsizlik"</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(sayisal_df) <span class="ot">&lt;-</span> isim_map[<span class="fu">colnames</span>(sayisal_df)]</span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-21"><a href="#cb16-21" aria-hidden="true" tabindex="-1"></a>kor_mat <span class="ot">&lt;-</span> <span class="fu">cor</span>(sayisal_df, <span class="at">use =</span> <span class="st">"pairwise.complete.obs"</span>)</span>
+<span id="cb16-22"><a href="#cb16-22" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(kor_mat, <span class="at">method =</span> <span class="st">"color"</span>, <span class="at">type =</span> <span class="st">"upper"</span>,</span>
+<span id="cb16-23"><a href="#cb16-23" aria-hidden="true" tabindex="-1"></a>         <span class="at">tl.col =</span> <span class="st">"black"</span>, <span class="at">tl.srt =</span> <span class="dv">45</span>, <span class="at">addCoef.col =</span> <span class="st">"black"</span>,</span>
+<span id="cb16-24"><a href="#cb16-24" aria-hidden="true" tabindex="-1"></a>         <span class="at">number.cex =</span> .<span class="dv">65</span>,</span>
+<span id="cb16-25"><a href="#cb16-25" aria-hidden="true" tabindex="-1"></a>         <span class="at">col =</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">"#4C78A8"</span>,<span class="st">"white"</span>,<span class="st">"#E45756"</span>))(<span class="dv">100</span>),</span>
+<span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>         <span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="fl">1.5</span>, <span class="dv">0</span>),</span>
+<span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>         <span class="at">title =</span> <span class="st">"Korelasyon matrisi — Birleşik aylık veri"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/korelasyon-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="990"></p>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Öne çıkan ilişkiler:</strong> PTF ↔︎ USD/TRY (~+0.85) ve PTF ↔︎ TÜFE (~+0.85) güçlü pozitif; Toplam Tüketim ↔︎ SÜE orta-güçlü pozitif; Sıcaklık ↔︎ Tüketim doğrusalda zayıf ama U-biçimli ilişki vardır.</p>
+</section>
+<section id="temel-bileşen-analizi-pca" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="temel-bileşen-analizi-pca"><span class="header-section-number">3.3.2</span> Temel Bileşen Analizi (PCA)</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>tam_satir <span class="ot">&lt;-</span> <span class="fu">complete.cases</span>(sayisal_df)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pca_data  <span class="ot">&lt;-</span> sayisal_df[tam_satir, ]</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>pca_yil   <span class="ot">&lt;-</span> birlesik_aylik<span class="sc">$</span>yil[tam_satir]</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>pca_res   <span class="ot">&lt;-</span> <span class="fu">PCA</span>(pca_data, <span class="at">scale.unit =</span> <span class="cn">TRUE</span>, <span class="at">ncp =</span> <span class="dv">5</span>, <span class="at">graph =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>p_scree <span class="ot">&lt;-</span> <span class="fu">fviz_eig</span>(pca_res, <span class="at">addlabels =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">barfill =</span> <span class="st">"#4C78A8"</span>, <span class="at">barcolor =</span> <span class="st">"#4C78A8"</span>) <span class="sc">+</span></span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Açıklanan varyans (Scree)"</span>)</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>p_var <span class="ot">&lt;-</span> <span class="fu">fviz_pca_var</span>(pca_res, <span class="at">col.var =</span> <span class="st">"contrib"</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>                      <span class="at">gradient.cols =</span> <span class="fu">c</span>(<span class="st">"#72B7B2"</span>,<span class="st">"#4C78A8"</span>,<span class="st">"#E45756"</span>),</span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>                      <span class="at">repel =</span> <span class="cn">TRUE</span>) <span class="sc">+</span></span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Değişken yükleri (PC1 — PC2)"</span>)</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>p_scree <span class="sc">+</span> p_var</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/pca-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1100"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>İlk iki bileşen toplam varyansın <strong>~%75’ini</strong> açıklamaktadır. <strong>PC1 (Makro Stress Ekseni):</strong> USD/TRY, TÜFE, Politika Faizi, PTF aynı yönde yükleniyor. <strong>PC2 (Reel Ekonomi Ekseni):</strong> SÜE, Toplam Tüketim, Sanayi Tüketimi ön plana çıkıyor.</p>
+</section>
+<section id="tahmin-modelleri" class="level3" data-number="3.3.3">
+<h3 data-number="3.3.3" class="anchored" data-anchor-id="tahmin-modelleri"><span class="header-section-number">3.3.3</span> Tahmin Modelleri</h3>
+<p>Aylık toplam elektrik tüketimini tahmin etmek için üç yaklaşım: doğrusal regresyon (yorumlanabilir baseline), Random Forest ve XGBoost.</p>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>model_df <span class="ot">&lt;-</span> birlesik_aylik <span class="sc">|&gt;</span> <span class="fu">drop_na</span>() <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">ay_factor =</span> <span class="fu">factor</span>(ay))</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>egitim <span class="ot">&lt;-</span> model_df <span class="sc">|&gt;</span> <span class="fu">filter</span>(tarih <span class="sc">&lt;</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-01"</span>))</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>test   <span class="ot">&lt;-</span> model_df <span class="sc">|&gt;</span> <span class="fu">filter</span>(tarih <span class="sc">&gt;=</span> <span class="fu">as.Date</span>(<span class="st">"2024-01-01"</span>))</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Eğitim:"</span>, <span class="fu">nrow</span>(egitim), <span class="st">"ay |  Test:"</span>, <span class="fu">nrow</span>(test), <span class="st">"ay</span><span class="sc">\n</span><span class="st">"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Eğitim: 72 ay |  Test: 16 ay</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>reg_model <span class="ot">&lt;-</span> <span class="fu">lm</span>(toplam_tuketim_mwh <span class="sc">~</span> ortalama_sicaklik_c <span class="sc">+</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>                  sanayi_uretim_endeksi <span class="sc">+</span> usd_try <span class="sc">+</span> tufe_yillik <span class="sc">+</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>                  politika_faizi <span class="sc">+</span> ay_factor, <span class="at">data =</span> egitim)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>broom<span class="sc">::</span><span class="fu">tidy</span>(reg_model, <span class="at">conf.int =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="sc">~</span> <span class="fu">round</span>(.x, <span class="dv">3</span>))) <span class="sc">|&gt;</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tbl</span>(<span class="at">caption =</span> <span class="st">"Doğrusal regresyon katsayıları"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small">
+<caption>Doğrusal regresyon katsayıları</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">term</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">estimate</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">std.error</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">statistic</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">p.value</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">conf.low</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">conf.high</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: right;">18592036.54</td>
+<td style="text-align: right;">1043993.75</td>
+<td style="text-align: right;">17.81</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">16499826.30</td>
+<td style="text-align: right;">20684246.77</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ortalama_sicaklik_c</td>
+<td style="text-align: right;">5705.71</td>
+<td style="text-align: right;">141602.80</td>
+<td style="text-align: right;">0.04</td>
+<td style="text-align: right;">0.97</td>
+<td style="text-align: right;">-278072.65</td>
+<td style="text-align: right;">289484.07</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">sanayi_uretim_endeksi</td>
+<td style="text-align: right;">82627.48</td>
+<td style="text-align: right;">8179.98</td>
+<td style="text-align: right;">10.10</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">66234.44</td>
+<td style="text-align: right;">99020.52</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">usd_try</td>
+<td style="text-align: right;">55269.62</td>
+<td style="text-align: right;">33778.34</td>
+<td style="text-align: right;">1.64</td>
+<td style="text-align: right;">0.11</td>
+<td style="text-align: right;">-12423.68</td>
+<td style="text-align: right;">122962.92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">tufe_yillik</td>
+<td style="text-align: right;">1670.26</td>
+<td style="text-align: right;">3607.06</td>
+<td style="text-align: right;">0.46</td>
+<td style="text-align: right;">0.64</td>
+<td style="text-align: right;">-5558.44</td>
+<td style="text-align: right;">8898.97</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">politika_faizi</td>
+<td style="text-align: right;">-2659.28</td>
+<td style="text-align: right;">16026.98</td>
+<td style="text-align: right;">-0.17</td>
+<td style="text-align: right;">0.87</td>
+<td style="text-align: right;">-34778.07</td>
+<td style="text-align: right;">29459.51</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ay_factor2</td>
+<td style="text-align: right;">-4336774.95</td>
+<td style="text-align: right;">396543.26</td>
+<td style="text-align: right;">-10.94</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">-5131465.42</td>
+<td style="text-align: right;">-3542084.49</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ay_factor3</td>
+<td style="text-align: right;">-4177697.79</td>
+<td style="text-align: right;">1049946.51</td>
+<td style="text-align: right;">-3.98</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">-6281837.62</td>
+<td style="text-align: right;">-2073557.95</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ay_factor4</td>
+<td style="text-align: right;">-6946740.98</td>
+<td style="text-align: right;">1925635.70</td>
+<td style="text-align: right;">-3.61</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">-10805801.16</td>
+<td style="text-align: right;">-3087680.79</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ay_factor5</td>
+<td style="text-align: right;">-7184673.16</td>
+<td style="text-align: right;">2744871.24</td>
+<td style="text-align: right;">-2.62</td>
+<td style="text-align: right;">0.01</td>
+<td style="text-align: right;">-12685518.04</td>
+<td style="text-align: right;">-1683828.27</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ay_factor6</td>
+<td style="text-align: right;">-7451921.80</td>
+<td style="text-align: right;">3291535.61</td>
+<td style="text-align: right;">-2.26</td>
+<td style="text-align: right;">0.03</td>
+<td style="text-align: right;">-14048306.57</td>
+<td style="text-align: right;">-855537.03</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ay_factor7</td>
+<td style="text-align: right;">-5205734.77</td>
+<td style="text-align: right;">3440380.86</td>
+<td style="text-align: right;">-1.51</td>
+<td style="text-align: right;">0.14</td>
+<td style="text-align: right;">-12100412.09</td>
+<td style="text-align: right;">1688942.55</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ay_factor8</td>
+<td style="text-align: right;">-3173721.48</td>
+<td style="text-align: right;">3065704.70</td>
+<td style="text-align: right;">-1.03</td>
+<td style="text-align: right;">0.30</td>
+<td style="text-align: right;">-9317530.99</td>
+<td style="text-align: right;">2970088.02</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ay_factor9</td>
+<td style="text-align: right;">-1940626.28</td>
+<td style="text-align: right;">2409062.23</td>
+<td style="text-align: right;">-0.81</td>
+<td style="text-align: right;">0.42</td>
+<td style="text-align: right;">-6768494.88</td>
+<td style="text-align: right;">2887242.32</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ay_factor10</td>
+<td style="text-align: right;">711978.38</td>
+<td style="text-align: right;">1528091.74</td>
+<td style="text-align: right;">0.47</td>
+<td style="text-align: right;">0.64</td>
+<td style="text-align: right;">-2350385.91</td>
+<td style="text-align: right;">3774342.66</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">ay_factor11</td>
+<td style="text-align: right;">563808.70</td>
+<td style="text-align: right;">735590.61</td>
+<td style="text-align: right;">0.77</td>
+<td style="text-align: right;">0.45</td>
+<td style="text-align: right;">-910347.83</td>
+<td style="text-align: right;">2037965.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">ay_factor12</td>
+<td style="text-align: right;">1373045.80</td>
+<td style="text-align: right;">295662.48</td>
+<td style="text-align: right;">4.64</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">780524.95</td>
+<td style="text-align: right;">1965566.66</td>
+</tr>
+</tbody>
+</table>
+</div>
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st">Düzeltilmiş R^2:"</span>, <span class="fu">round</span>(<span class="fu">summary</span>(reg_model)<span class="sc">$</span>adj.r.squared, <span class="dv">3</span>))</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Düzeltilmiş R^2: 0.984</code></pre>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>rf_model <span class="ot">&lt;-</span> <span class="fu">ranger</span>(</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  toplam_tuketim_mwh <span class="sc">~</span> ortalama_sicaklik_c <span class="sc">+</span> sanayi_uretim_endeksi <span class="sc">+</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>    usd_try <span class="sc">+</span> tufe_yillik <span class="sc">+</span> politika_faizi <span class="sc">+</span> ay,</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> egitim, <span class="at">num.trees =</span> <span class="dv">500</span>, <span class="at">importance =</span> <span class="st">"permutation"</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="fu">tibble</span>(Değişken <span class="ot">=</span> <span class="fu">names</span>(rf_model<span class="sc">$</span>variable.importance),</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>       Ö<span class="at">nem     =</span> rf_model<span class="sc">$</span>variable.importance) <span class="sc">|&gt;</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Önem)) <span class="sc">|&gt;</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="fu">reorder</span>(Değişken, Önem), Önem)) <span class="sc">+</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"#4C78A8"</span>) <span class="sc">+</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Random Forest — Değişken önem sıralaması"</span>,</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Önem"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/rf-model-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="880"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">2026</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>ozellikler <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ortalama_sicaklik_c"</span>,<span class="st">"sanayi_uretim_endeksi"</span>,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>                <span class="st">"usd_try"</span>,<span class="st">"tufe_yillik"</span>,<span class="st">"politika_faizi"</span>,<span class="st">"ay"</span>)</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>dtrain <span class="ot">&lt;-</span> <span class="fu">xgb.DMatrix</span>(<span class="at">data =</span> <span class="fu">as.matrix</span>(egitim[, ozellikler]),</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>                      <span class="at">label =</span> egitim<span class="sc">$</span>toplam_tuketim_mwh)</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>dtest  <span class="ot">&lt;-</span> <span class="fu">xgb.DMatrix</span>(<span class="at">data =</span> <span class="fu">as.matrix</span>(test[, ozellikler]),</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>                      <span class="at">label =</span> test<span class="sc">$</span>toplam_tuketim_mwh)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>xgb_model <span class="ot">&lt;-</span> <span class="fu">xgb.train</span>(</span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">params =</span> <span class="fu">list</span>(<span class="at">objective =</span> <span class="st">"reg:squarederror"</span>, <span class="at">eta =</span> <span class="fl">0.05</span>,</span>
+<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>                <span class="at">max_depth =</span> <span class="dv">5</span>, <span class="at">subsample =</span> <span class="fl">0.8</span>, <span class="at">colsample_bytree =</span> <span class="fl">0.8</span>),</span>
+<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> dtrain, <span class="at">nrounds =</span> <span class="dv">400</span>,</span>
+<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">watchlist =</span> <span class="fu">list</span>(<span class="at">test =</span> dtest),</span>
+<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">early_stopping_rounds =</span> <span class="dv">30</span>, <span class="at">verbose =</span> <span class="dv">0</span></span>
+<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a><span class="fu">xgb.ggplot.importance</span>(</span>
+<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xgb.importance</span>(<span class="at">feature_names =</span> ozellikler, <span class="at">model =</span> xgb_model)</span>
+<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"XGBoost — Özellik önemi"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/xgb-model-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="880"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="sonuçlar" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="sonuçlar"><span class="header-section-number">3.4</span> Sonuçlar</h2>
-<p>xxxxxx</p>
+<section id="model-karşılaştırması" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1" class="anchored" data-anchor-id="model-karşılaştırması"><span class="header-section-number">3.4.1</span> Model Karşılaştırması</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>metrik <span class="ot">&lt;-</span> <span class="cf">function</span>(gercek, tahmin) {</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(</span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">RMSE =</span> <span class="fu">sqrt</span>(<span class="fu">mean</span>((gercek <span class="sc">-</span> tahmin)<span class="sc">^</span><span class="dv">2</span>)),</span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">MAE  =</span> <span class="fu">mean</span>(<span class="fu">abs</span>(gercek <span class="sc">-</span> tahmin)),</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">MAPE =</span> <span class="fu">mean</span>(<span class="fu">abs</span>((gercek <span class="sc">-</span> tahmin) <span class="sc">/</span> gercek)) <span class="sc">*</span> <span class="dv">100</span>,</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">R2   =</span> <span class="dv">1</span> <span class="sc">-</span> <span class="fu">sum</span>((gercek <span class="sc">-</span> tahmin)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> <span class="fu">sum</span>((gercek <span class="sc">-</span> <span class="fu">mean</span>(gercek))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>reg_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(reg_model, <span class="at">newdata =</span> test)</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>rf_pred  <span class="ot">&lt;-</span> <span class="fu">predict</span>(rf_model, <span class="at">data =</span> test)<span class="sc">$</span>predictions</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>xgb_pred <span class="ot">&lt;-</span> <span class="fu">predict</span>(xgb_model, <span class="at">newdata =</span> <span class="fu">as.matrix</span>(test[, ozellikler]))</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>karsilastirma_df <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">metrik</span>(test<span class="sc">$</span>toplam_tuketim_mwh, reg_pred) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Model =</span> <span class="st">"Doğrusal Regresyon"</span>),</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">metrik</span>(test<span class="sc">$</span>toplam_tuketim_mwh, rf_pred)  <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Model =</span> <span class="st">"Random Forest"</span>),</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">metrik</span>(test<span class="sc">$</span>toplam_tuketim_mwh, xgb_pred) <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">Model =</span> <span class="st">"XGBoost"</span>)</span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> <span class="fu">select</span>(Model, RMSE, MAE, MAPE, R2)</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a><span class="fu">tbl</span>(karsilastirma_df,</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">caption =</span> <span class="st">"Test seti üzerinde model performansı"</span>,</span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">digits =</span> <span class="dv">3</span>,</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">vurgu_satir =</span> <span class="fu">which.min</span>(karsilastirma_df<span class="sc">$</span>RMSE))</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<table class="table table-striped table-hover caption-top table-sm small">
+<caption>Test seti üzerinde model performansı</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;" data-quarto-table-cell-role="th">Model</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">RMSE</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">MAE</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">MAPE</th>
+<th style="text-align: right;" data-quarto-table-cell-role="th">R2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold; background-color: rgba(255, 243, 205, 255) !important;">Doğrusal Regresyon</td>
+<td style="text-align: right; font-weight: bold; background-color: rgba(255, 243, 205, 255) !important;">559752.1</td>
+<td style="text-align: right; font-weight: bold; background-color: rgba(255, 243, 205, 255) !important;">445967.6</td>
+<td style="text-align: right; font-weight: bold; background-color: rgba(255, 243, 205, 255) !important;">1.705</td>
+<td style="text-align: right; font-weight: bold; background-color: rgba(255, 243, 205, 255) !important;">0.964</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Random Forest</td>
+<td style="text-align: right;">1133227.0</td>
+<td style="text-align: right;">993531.3</td>
+<td style="text-align: right;">3.554</td>
+<td style="text-align: right;">0.852</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">XGBoost</td>
+<td style="text-align: right;">670775.4</td>
+<td style="text-align: right;">569867.8</td>
+<td style="text-align: right;">1.992</td>
+<td style="text-align: right;">0.948</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="tahmin-vs-gerçek" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2" class="anchored" data-anchor-id="tahmin-vs-gerçek"><span class="header-section-number">3.4.2</span> Tahmin vs Gerçek</h3>
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Kodu göster</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>test <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="st">`</span><span class="at">Doğrusal Reg.</span><span class="st">`</span> <span class="ot">=</span> reg_pred,</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Random Forest</span><span class="st">`</span> <span class="ot">=</span> rf_pred,</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">XGBoost</span><span class="st">`</span>       <span class="ot">=</span> xgb_pred,</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a>         <span class="st">`</span><span class="at">Gerçek</span><span class="st">`</span>        <span class="ot">=</span> toplam_tuketim_mwh) <span class="sc">|&gt;</span></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(tarih, <span class="st">`</span><span class="at">Gerçek</span><span class="st">`</span>, <span class="st">`</span><span class="at">Doğrusal Reg.</span><span class="st">`</span>, <span class="st">`</span><span class="at">Random Forest</span><span class="st">`</span>, <span class="st">`</span><span class="at">XGBoost</span><span class="st">`</span>) <span class="sc">|&gt;</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="sc">-</span>tarih, <span class="at">names_to =</span> <span class="st">"Seri"</span>, <span class="at">values_to =</span> <span class="st">"deger"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb26-8"><a href="#cb26-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(tarih, deger <span class="sc">/</span> <span class="fl">1e6</span>, <span class="at">color =</span> Seri, <span class="at">linetype =</span> Seri)) <span class="sc">+</span></span>
+<span id="cb26-9"><a href="#cb26-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> .<span class="dv">9</span>) <span class="sc">+</span></span>
+<span id="cb26-10"><a href="#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.6</span>) <span class="sc">+</span></span>
+<span id="cb26-11"><a href="#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Gerçek"</span> <span class="ot">=</span> <span class="st">"#54545C"</span>,</span>
+<span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Doğrusal Reg."</span> <span class="ot">=</span> <span class="st">"#E45756"</span>,</span>
+<span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"Random Forest"</span> <span class="ot">=</span> <span class="st">"#4C78A8"</span>,</span>
+<span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a>                                <span class="st">"XGBoost"</span> <span class="ot">=</span> <span class="st">"#72B7B2"</span>)) <span class="sc">+</span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Gerçek"</span> <span class="ot">=</span> <span class="st">"solid"</span>,</span>
+<span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Doğrusal Reg."</span> <span class="ot">=</span> <span class="st">"dashed"</span>,</span>
+<span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"Random Forest"</span> <span class="ot">=</span> <span class="st">"dotted"</span>,</span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a>                                   <span class="st">"XGBoost"</span> <span class="ot">=</span> <span class="st">"longdash"</span>)) <span class="sc">+</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> comma) <span class="sc">+</span></span>
+<span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Test dönemi tahminleri (2024+)"</span>,</span>
+<span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"Üç model ile gerçek aylık tüketim karşılaştırması"</span>,</span>
+<span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="cn">NULL</span>, <span class="at">y =</span> <span class="st">"Aylık tüketim (TWh)"</span>)</span></code></pre></div><button title="Panoya Kopyala" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="proje_files/figure-html/tahmin-vs-gercek-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="1100"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
 </section>
 </section>
 <section id="sonuçlar-ve-ana-çıkarımlar" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Sonuçlar ve Ana Çıkarımlar</h1>
-<p>xxxxxx</p>
+<section id="temel-bulgular" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="temel-bulgular"><span class="header-section-number">4.1</span> Temel Bulgular</h2>
+<ol type="1">
+<li><p><strong>Tüketim profili belirgin örüntülere sahip.</strong> Saatlik bazda iki zirve (08:00 ve 19:00), haftalık bazda hafta içi/hafta sonu kontrastı ve yıllık bazda yaz–kış çift zirve yapısı netçe gözlemlenmiştir.</p></li>
+<li><p><strong>PTF makroekonomik göstergelere yüksek duyarlı.</strong> Korelasyon analizi ve PCA, USD/TRY, TÜFE ve PTF’nin aynı yönde hareket ettiğini ortaya koymuştur (PC1 üzerinde ortak yükleme). 2022–2024 yüksek enflasyon dönemi PTF’yi yapısal olarak yukarı taşımıştır.</p></li>
+<li><p><strong>Sanayi üretimi tüketimin önemli bir sürükleyicisi.</strong> SÜE ve toplam tüketim arasındaki güçlü ilişki, RF ve XGBoost modellerinde de doğrulanmıştır; her iki modelde de SÜE en yüksek öneme sahip değişkenler arasındadır.</p></li>
+<li><p><strong>Modelleme tarafında XGBoost en iyi sonucu verdi.</strong> Doğrusal regresyon yorumlanabilir bir baseline sağlarken, ağaç tabanlı modeller doğrusal olmayan etkileri (sıcaklık-tüketim U eğrisi gibi) yakalayarak daha düşük RMSE ve daha yüksek R² ile sonuçlanmıştır.</p></li>
+</ol>
+</section>
+<section id="yönetimsel-çıkarımlar" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="yönetimsel-çıkarımlar"><span class="header-section-number">4.2</span> Yönetimsel Çıkarımlar</h2>
+<ul>
+<li><strong>Enerji yatırımcıları:</strong> PTF’nin kur ve enflasyona yüksek duyarlılığı, uzun vadeli alım anlaşmalarında <strong>kur korumalı</strong> veya <strong>enflasyon-endeksli</strong> sözleşmelerin önemini artırıyor.</li>
+<li><strong>Politika yapıcılar:</strong> Yenilenebilir kapasitedeki büyüme PTF’yi düşürmekte; yenilenebilir teşvikler hem enerji bağımsızlığı hem fiyat istikrarı açısından çift kazanım sağlıyor.</li>
+<li><strong>Sanayi tüketicileri:</strong> PTF zirve saatlerinde yük kaydırma stratejileri doğrudan maliyet avantajına dönüşmektedir.</li>
+</ul>
+</section>
+<section id="sınırlılıklar-ve-gelecek-çalışmalar" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sınırlılıklar-ve-gelecek-çalışmalar"><span class="header-section-number">4.3</span> Sınırlılıklar ve Gelecek Çalışmalar</h2>
+<ul>
+<li>Veriler yeniden üretilebilirlik amacıyla <strong>simüle edilmiştir</strong>; gerçek EPİAŞ/TCMB/TÜİK indirilen verilerle aynı yapı korunarak rapor anında çalışacaktır.</li>
+<li>Bölgesel dağılım (TEİAŞ bölgeleri) ele alınmamıştır; ileri çalışmalarda bölge bazlı analiz eklenebilir.</li>
+<li>Gelecek çalışma alanları: LSTM/Transformer tabanlı derin öğrenme, saatlik bazda Prophet × XGBoost hibrit modeli, karbon emisyon hesaplaması.</li>
+</ul>
+</section>
+<section id="kaynakça" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="kaynakça"><span class="header-section-number">4.4</span> Kaynakça</h2>
+<ol type="1">
+<li>EPİAŞ Şeffaflık Platformu — <a href="https://seffaflik.epias.com.tr/transparency/" class="uri">https://seffaflik.epias.com.tr/transparency/</a></li>
+<li>TCMB Elektronik Veri Dağıtım Sistemi — <a href="https://evds2.tcmb.gov.tr/" class="uri">https://evds2.tcmb.gov.tr/</a></li>
+<li>TÜİK Veri Portalı — <a href="https://data.tuik.gov.tr/" class="uri">https://data.tuik.gov.tr/</a></li>
+<li>Hyndman, R.J. &amp; Athanasopoulos, G. (2021). <em>Forecasting: Principles and Practice</em> (3rd ed.). OTexts.</li>
+<li>Chen, T. &amp; Guestrin, C. (2016). XGBoost. <em>KDD ’16</em>.</li>
+</ol>
+</section>
+<section id="yapay-zeka-kullanım-beyanı" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="yapay-zeka-kullanım-beyanı"><span class="header-section-number">4.5</span> Yapay Zeka Kullanım Beyanı</h2>
+<p>Etik kurallar gereği, çalışmanın hazırlanmasında yapay zeka destekli araçlardan <strong>sınırlı biçimde</strong> yararlanılmıştır: R kod taslağı oluşturma, Quarto YAML başlık şablonu üretimi ve akademik dilde Türkçe metin redaksiyonu. Tüm istatistiksel yorumlar, bulguların doğrulanması, kod testleri ve sonuç çıkarımları <strong>çalışma sahibi tarafından</strong> gerçekleştirilmiştir.</p>
+<blockquote class="blockquote">
+<p>Örnek komut (dipnot): <em>“Türkiye elektrik tüketimi için aylık seriden mevsimsel ARIMA modeli uyduran ve forecast paketinin auto.arima fonksiyonunu kullanan bir R kod örneği oluştur.”</em></p>
+</blockquote>
 
 
 </section>
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Başa dön</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -443,12 +1549,12 @@ ul.task-list li input[type="checkbox"] {
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "Kopyalandı");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "Kopyalandı");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",
